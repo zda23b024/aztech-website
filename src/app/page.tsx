@@ -1,156 +1,125 @@
-import { getConfig } from '@/lib/config';
-import { getMarkdownContent, getBibtexContent, getTomlContent, getPageConfig } from '@/lib/content';
-import { parseBibTeX } from '@/lib/bibtexParser';
-import HomePageClient, { type HomePageLocaleData } from '@/components/home/HomePageClient';
-import { Publication } from '@/types/publication';
-import { BasePageConfig, PublicationPageConfig, TextPageConfig, CardPageConfig } from '@/types/page';
-import { getRuntimeI18nConfig } from '@/lib/i18n/config';
-
-interface SectionConfig {
-  id: string;
-  type: 'markdown' | 'publications' | 'list';
-  title?: string;
-  source?: string;
-  filter?: string;
-  limit?: number;
-  content?: string;
-  publications?: Publication[];
-  items?: NewsItem[];
-}
-
-interface NewsItem {
-  date: string;
-  content: string;
-}
-
-type PageData =
-  | { type: 'about'; id: string; sections: SectionConfig[] }
-  | { type: 'publication'; id: string; config: PublicationPageConfig; publications: Publication[] }
-  | { type: 'text'; id: string; config: TextPageConfig; content: string }
-  | { type: 'card'; id: string; config: CardPageConfig };
-
-function processSections(sections: SectionConfig[], locale?: string): SectionConfig[] {
-  return sections.map((section: SectionConfig) => {
-    switch (section.type) {
-      case 'markdown':
-        return {
-          ...section,
-          content: section.source ? getMarkdownContent(section.source, locale) : '',
-        };
-      case 'publications': {
-        const bibtex = getBibtexContent('publications.bib', locale);
-        const allPubs = parseBibTeX(bibtex, locale);
-        const filteredPubs = section.filter === 'selected'
-          ? allPubs.filter((p) => p.selected)
-          : allPubs;
-        return {
-          ...section,
-          publications: filteredPubs.slice(0, section.limit || 5),
-        };
-      }
-      case 'list': {
-        const newsData = section.source ? getTomlContent<{ news: NewsItem[] }>(section.source, locale) : null;
-        return {
-          ...section,
-          items: newsData?.news || [],
-        };
-      }
-      default:
-        return section;
-    }
-  });
-}
-
-function loadPageDataForLocale(locale: string | undefined): HomePageLocaleData {
-  const localeConfig = getConfig(locale);
-  const enableOnePageMode = localeConfig.features.enable_one_page_mode;
-
-  const aboutConfig = getPageConfig<{ profile?: { research_interests?: string[] }; sections?: SectionConfig[] }>('about', locale);
-  const researchInterests = aboutConfig?.profile?.research_interests;
-
-  let pagesToShow: PageData[] = [];
-
-  if (enableOnePageMode) {
-    pagesToShow = localeConfig.navigation
-      .filter((item) => item.type === 'page')
-      .map((item) => {
-        const rawConfig = getPageConfig(item.target, locale);
-        if (!rawConfig) return null;
-
-        const pageConfig = rawConfig as BasePageConfig;
-
-        if (pageConfig.type === 'about' || 'sections' in (rawConfig as object)) {
-          return {
-            type: 'about',
-            id: item.target,
-            sections: processSections((rawConfig as { sections: SectionConfig[] }).sections || [], locale),
-          } as PageData;
-        }
-
-        if (pageConfig.type === 'publication') {
-          const pubConfig = pageConfig as PublicationPageConfig;
-          const bibtex = getBibtexContent(pubConfig.source, locale);
-          return {
-            type: 'publication',
-            id: item.target,
-            config: pubConfig,
-            publications: parseBibTeX(bibtex, locale),
-          } as PageData;
-        }
-
-        if (pageConfig.type === 'text') {
-          const textConfig = pageConfig as TextPageConfig;
-          return {
-            type: 'text',
-            id: item.target,
-            config: textConfig,
-            content: getMarkdownContent(textConfig.source, locale),
-          } as PageData;
-        }
-
-        if (pageConfig.type === 'card') {
-          return {
-            type: 'card',
-            id: item.target,
-            config: pageConfig as CardPageConfig,
-          } as PageData;
-        }
-
-        return null;
-      })
-      .filter((item): item is PageData => item !== null);
-  } else if (aboutConfig) {
-    pagesToShow = [{
-      type: 'about',
-      id: 'about',
-      sections: processSections(aboutConfig.sections || [], locale),
-    }];
-  }
-
-  return {
-    author: localeConfig.author,
-    social: localeConfig.social,
-    features: localeConfig.features,
-    enableOnePageMode,
-    researchInterests,
-    pagesToShow,
-  };
-}
+import Link from 'next/link';
+import { ArrowRight, Cpu, Sparkles } from 'lucide-react';
+import SectionHeader from '@/components/aztech/SectionHeader';
+import { BlogCard, ProjectCard, ResearchCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
+import { capabilityStats, insights, projects, research, services, team, technologyStack } from '@/data/company';
 
 export default function Home() {
-  const baseConfig = getConfig();
-  const runtimeI18n = getRuntimeI18nConfig(baseConfig.i18n);
-  const targetLocales = runtimeI18n.enabled ? runtimeI18n.locales : [runtimeI18n.defaultLocale];
+  const leadership = team.filter((member) => member.group === 'Leadership').slice(0, 2);
 
-  const dataByLocale: Record<string, HomePageLocaleData> = {};
+  return (
+    <>
+      <section className="relative isolate overflow-hidden bg-[#dfeaf0]">
+        <div className="absolute inset-0 tech-grid opacity-45" />
+        <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_25%_20%,rgba(8,145,178,0.22),transparent_34%),radial-gradient(circle_at_75%_10%,rgba(15,23,42,0.12),transparent_30%)]" />
+        <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.18fr_0.82fr] lg:px-8">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white/80 px-3 py-1.5 text-sm font-semibold text-slate-800 shadow-sm">
+              <Sparkles size={16} aria-hidden /> Software development and AI engineering
+            </div>
+            <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-normal text-slate-950 sm:text-5xl">
+              We Design, Build, and Ship Modern Digital Products.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              Aztech builds business websites, mobile applications, management systems, booking platforms, inventory tools, CRM systems, automated reports and AI-powered solutions.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/solutions" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0f8fb3] px-5 py-3 font-bold text-white transition hover:bg-[#0b7898] focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                Explore Our Solutions <ArrowRight size={18} aria-hidden />
+              </Link>
+              <Link href="/projects" className="inline-flex items-center justify-center rounded-md border border-slate-400 bg-white px-5 py-3 font-bold text-slate-900 transition hover:border-cyan-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                View Our Projects
+              </Link>
+            </div>
+            <dl className="mt-10 grid gap-3 sm:grid-cols-3">
+              {capabilityStats.map((item) => (
+                <div key={item.label} className="rounded-lg border border-slate-700 bg-[#162334] p-4 shadow-sm">
+                  <dt className="text-xs font-bold uppercase tracking-widest text-cyan-300">{item.label}</dt>
+                  <dd className="mt-2 text-sm font-semibold text-slate-100">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
 
-  for (const locale of targetLocales) {
-    dataByLocale[locale] = loadPageDataForLocale(locale);
-  }
+          <div className="relative mx-auto min-h-[340px] w-full max-w-[520px]">
+            <div className="absolute inset-0 rounded-2xl border border-slate-700 bg-[#101b2a] shadow-2xl" />
+            <div className="absolute inset-5 rounded-xl border border-slate-600 bg-[#142235]" />
+            <div className="absolute left-1/2 top-1/2 grid h-28 w-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-cyan-400/40 bg-cyan-400/10 text-cyan-300 shadow-[0_0_54px_rgba(34,211,238,0.22)]">
+              <Cpu size={44} aria-hidden />
+            </div>
+            {technologyStack.map((item, index) => {
+              const Icon = item.icon;
+              const positions = ['left-8 top-10', 'right-8 top-16', 'bottom-12 left-10', 'bottom-8 right-10'];
+              return (
+                <div key={item.label} className={`absolute ${positions[index]} rounded-lg border border-slate-600 bg-[#1b2d42] p-4 shadow-xl`}>
+                  <Icon className="text-cyan-300" size={22} aria-hidden />
+                  <p className="mt-2 text-sm font-bold text-slate-100">{item.label}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-  if (!dataByLocale[runtimeI18n.defaultLocale]) {
-    dataByLocale[runtimeI18n.defaultLocale] = loadPageDataForLocale(undefined);
-  }
+      <section className="bg-[#eef3f6] px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Development services"
+            title="Engineering services for real products and operations."
+            description="We help businesses, offices and organizations turn manual work into useful digital systems, from websites and mobile apps to reports, notifications and AI-powered workflows."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {services.slice(0, 4).map((service) => <ServiceCard key={service.title} service={service} />)}
+          </div>
+        </div>
+      </section>
 
-  return <HomePageClient dataByLocale={dataByLocale} defaultLocale={runtimeI18n.defaultLocale} />;
+      <section className="bg-[#dfe8ee] px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader eyebrow="Projects" title="Systems Aztech builds for real businesses." description="Aztech delivers practical systems for businesses, offices and organizations that need reliable digital operations." />
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#eef3f6] px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <SectionHeader eyebrow="Team" title="Founder-led, collaborative and built around engineering craft." description="Aztech is led by Ali Yahya Ali and Zakariya Yahya Ally, brothers building practical technology for businesses and organizations." />
+          <div className="grid gap-5">
+            {leadership.map((member) => <TeamCard key={member.slug} member={member} />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#dfe8ee] px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
+          <div>
+            <SectionHeader eyebrow="Research & Innovation" title="Experiments that can become practical products." />
+            <div className="mt-8 grid gap-5">
+              {research.slice(0, 1).map((item) => <ResearchCard key={item.title} item={item} />)}
+            </div>
+          </div>
+          <div>
+            <SectionHeader eyebrow="Insights" title="Notes about software, AI and practical business technology." />
+            <div className="mt-8 grid gap-5">
+              {insights.slice(0, 1).map((post) => <BlogCard key={post.title} post={post} />)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#eef3f6] px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-lg border border-slate-700 bg-[#142235] p-8 shadow-lg lg:flex-row lg:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-widest text-cyan-300">Work with us</p>
+            <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">Ready to turn an idea into a serious digital product?</h2>
+          </div>
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-5 py-3 font-bold text-slate-950 transition hover:bg-cyan-300">
+            Work With Us <ArrowRight size={18} aria-hidden />
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }
