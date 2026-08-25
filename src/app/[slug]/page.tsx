@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Building2, Code2, Eye, Flag, Gem, Mail, MapPin, Phone, ServerCog, TerminalSquare } from 'lucide-react';
+import { Building2, Code2, Eye, Flag, Gem, Mail, MapPin, Phone, Rocket, ServerCog, TerminalSquare } from 'lucide-react';
 import ContactForm from '@/components/aztech/ContactForm';
 import SectionHeader from '@/components/aztech/SectionHeader';
 import { BlogCard, JobCard, ProjectCard, ResearchCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
@@ -103,12 +103,17 @@ function AboutPage() {
     {
       icon: Flag,
       title: 'Our Mission',
-      text: 'To build practical digital solutions that help people, teams and organizations move from ideas to working technology.',
+      text: 'To design and build reliable websites, applications, management systems and AI-powered tools that help businesses work faster, serve customers better and grow with confidence.',
     },
     {
       icon: Eye,
       title: 'Our Vision',
-      text: 'To become a trusted technology organization based in Tanzania and serving businesses locally and across Africa with thoughtful software, AI, data and automation work.',
+      text: 'To become a trusted technology partner for businesses in Tanzania and across Africa, known for practical innovation, strong engineering and digital systems that create real impact.',
+    },
+    {
+      icon: Rocket,
+      title: 'Our Motto',
+      text: 'Technology that moves ideas forward.',
     },
     {
       icon: Gem,
