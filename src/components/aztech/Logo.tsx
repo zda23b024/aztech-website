@@ -15,10 +15,10 @@ export default function Logo({ tone = 'dark' }: LogoProps) {
       <Image
         src="/brand/aztech-logo.png"
         alt="Aztech"
-        width={2172}
-        height={724}
+        width={1536}
+        height={1024}
         priority={tone === 'dark'}
-        className="h-auto w-[148px] sm:w-[168px] lg:w-[188px]"
+        className={tone === 'light' ? 'h-auto w-[170px] sm:w-[210px]' : 'h-auto w-[92px] sm:w-[104px] lg:w-[118px]'}
       />
     </Link>
   );

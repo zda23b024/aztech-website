@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/brand/aztech-logo.png',
-        width: 2172,
-        height: 724,
+        width: 1536,
+        height: 1024,
         alt: 'Aztech logo',
       },
     ],
