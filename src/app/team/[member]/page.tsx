@@ -25,7 +25,9 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
   const { member } = await params;
   const profile = team.find((item) => item.slug === member);
 
-  if (!profile) notFound();
+  if (!profile) {
+    notFound();
+  }
 
   const sections = [
     { title: 'Education', items: profile.education },
