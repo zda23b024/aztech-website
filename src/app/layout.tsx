@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import { Manrope, Sora } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/aztech/Navbar';
 import Footer from '@/components/aztech/Footer';
@@ -11,6 +11,14 @@ const manrope = Manrope({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-manrope',
+  display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  weight: ['500', '600', '700', '800'],
+  variable: '--font-sora',
   display: 'swap',
   fallback: ['system-ui', 'sans-serif'],
 });
@@ -66,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} scroll-smooth`}>
+    <html lang="en" className={`${manrope.variable} ${sora.variable} scroll-smooth`}>
       <body className="min-h-screen bg-[#F7FAFF] font-sans text-[#071B46] antialiased">
         <Navbar />
         <main className="pt-16 lg:pt-20">

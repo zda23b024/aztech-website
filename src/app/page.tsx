@@ -28,8 +28,8 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 rounded-md border border-[#09CBEF]/30 bg-white/10 px-3 py-1.5 text-sm font-semibold text-white shadow-sm backdrop-blur">
                 <Sparkles size={16} aria-hidden /> Technology | AI | Digital
               </div>
-              <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-                Build the Digital System Your Business Runs On.
+              <h1 className="mt-6 max-w-3xl text-3xl font-bold leading-[1.08] text-white sm:text-4xl lg:text-5xl">
+                Smart Software for Growing Businesses.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-blue-50/86">
                 Aztech designs and develops business websites, mobile applications, management systems, booking platforms, inventory tools, CRM workflows, automated reports and AI-powered solutions.
