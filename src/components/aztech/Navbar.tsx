@@ -34,15 +34,23 @@ export default function Navbar() {
           Work With Us
         </Link>
 
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#DCE7F5] text-[#071B46] focus:outline-none focus:ring-2 focus:ring-[#087CFF] lg:hidden"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link
+            href="/contact"
+            className="brand-gradient inline-flex h-10 items-center rounded-md px-3 text-xs font-semibold text-white shadow-[0_10px_24px_rgba(8,124,255,0.16)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF]"
+          >
+            Work With Us
+          </Link>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#DCE7F5] text-[#071B46] focus:outline-none focus:ring-2 focus:ring-[#087CFF]"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
