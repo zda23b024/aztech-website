@@ -84,7 +84,7 @@ export default function ContactForm() {
           placeholder="Tell us what you want to build."
         />
       </label>
-      <button type="submit" className="brand-gradient inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-bold text-white shadow-[0_14px_30px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
+      <button type="submit" className="brand-gradient inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-semibold text-white shadow-[0_14px_30px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
         Send Message <Send size={18} aria-hidden />
       </button>
       <p className="text-xs leading-5 text-[#64748B]">

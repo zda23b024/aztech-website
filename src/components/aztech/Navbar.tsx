@@ -29,7 +29,7 @@ export default function Navbar() {
 
         <Link
           href="/contact"
-          className="brand-gradient hidden rounded-md px-4 py-2 text-sm font-bold text-white shadow-[0_14px_30px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF] focus:ring-offset-2 focus:ring-offset-white lg:inline-flex"
+          className="brand-gradient hidden rounded-md px-4 py-2 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF] focus:ring-offset-2 focus:ring-offset-white lg:inline-flex"
         >
           Work With Us
         </Link>
@@ -68,7 +68,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="brand-gradient mt-3 rounded-md px-4 py-3 text-center font-bold text-white"
+                className="brand-gradient mt-3 rounded-md px-4 py-3 text-center font-semibold text-white"
               >
                 Work With Us
               </Link>

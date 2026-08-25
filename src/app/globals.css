@@ -64,7 +64,7 @@
   --color-neutral-700: var(--neutral-700);
   --color-neutral-800: var(--neutral-800);
   --color-neutral-900: var(--neutral-900);
-  --font-sans: "Aptos", "Segoe UI Variable", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
   --font-mono: "SF Mono", Consolas, "Liberation Mono", monospace;
 }
 
@@ -80,7 +80,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -88,8 +88,28 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Aptos Display", "Segoe UI Variable Display", "Aptos", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: 0;
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+p,
+li,
+dd,
+dt,
+label,
+input,
+select,
+textarea {
+  line-height: 1.6;
+}
+
+nav,
+button,
+a,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
 }
 
 ::selection {
@@ -140,7 +160,7 @@ textarea {
   border: 1px solid #dce7f5;
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #071b46;
   transition: background-color 180ms ease, color 180ms ease;
 }

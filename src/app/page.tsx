@@ -17,17 +17,17 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 rounded-md border border-[#DCE7F5] bg-white/88 px-3 py-1.5 text-sm font-semibold text-[#0759E6] shadow-sm">
               <Sparkles size={16} aria-hidden /> Software development and AI engineering
             </div>
-            <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-normal text-[#071B46] sm:text-5xl">
+            <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.08] text-[#071B46] sm:text-5xl">
               We Design, Build, and Ship Modern Digital Products.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#475569]">
               Aztech builds business websites, mobile applications, management systems, booking platforms, inventory tools, CRM systems, automated reports and AI-powered solutions.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/solutions" className="brand-gradient inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-bold text-white shadow-[0_16px_34px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
+              <Link href="/solutions" className="brand-gradient inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-semibold text-white shadow-[0_16px_34px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
                 Explore Our Solutions <ArrowRight size={18} aria-hidden />
               </Link>
-              <Link href="/projects" className="inline-flex items-center justify-center rounded-md border border-[#087CFF] bg-white px-5 py-3 font-bold text-[#0759E6] transition hover:border-[#071B46] hover:bg-[#F7FAFF] hover:text-[#071B46] focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
+              <Link href="/projects" className="inline-flex items-center justify-center rounded-md border border-[#087CFF] bg-white px-5 py-3 font-semibold text-[#0759E6] transition hover:border-[#071B46] hover:bg-[#F7FAFF] hover:text-[#071B46] focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
                 View Our Projects
               </Link>
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
             <p className="text-sm font-bold uppercase tracking-widest text-[#09CBEF]">Work with us</p>
             <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">Ready to turn an idea into a serious digital product?</h2>
           </div>
-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-bold text-[#0759E6] transition hover:bg-[#09CBEF] hover:text-[#04132F]">
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-semibold text-[#0759E6] transition hover:bg-[#09CBEF] hover:text-[#04132F]">
             Work With Us <ArrowRight size={18} aria-hidden />
           </Link>
         </div>

@@ -83,7 +83,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
         ))}
       </div>
       <div className="mt-5 flex flex-wrap gap-3">
-        <Link href={`/team/${member.slug}`} className="inline-flex items-center gap-1 text-sm font-bold text-[#087CFF] hover:text-[#071B46]">
+        <Link href={`/team/${member.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-[#087CFF] hover:text-[#071B46]">
           View profile <ArrowUpRight size={16} aria-hidden />
         </Link>
         {member.email ? (
