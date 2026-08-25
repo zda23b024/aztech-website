@@ -70,7 +70,7 @@ export default function ContactForm() {
           <option>General inquiry</option>
           <option>Partnerships</option>
           <option>Projects</option>
-          <option>Research collaboration</option>
+          <option>Technical collaboration</option>
           <option>Careers</option>
         </select>
       </label>

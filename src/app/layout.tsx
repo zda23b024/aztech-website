@@ -3,6 +3,7 @@ import { Manrope } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/aztech/Navbar';
 import Footer from '@/components/aztech/Footer';
+import PageReveal from '@/components/aztech/PageReveal';
 import { company } from '@/data/company';
 import { siteUrl } from '@/lib/siteUrl';
 
@@ -68,7 +69,9 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} scroll-smooth`}>
       <body className="min-h-screen bg-[#F7FAFF] font-sans text-[#071B46] antialiased">
         <Navbar />
-        <main className="pt-16 lg:pt-20">{children}</main>
+        <main className="pt-16 lg:pt-20">
+          <PageReveal>{children}</PageReveal>
+        </main>
         <Footer />
       </body>
     </html>

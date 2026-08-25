@@ -28,7 +28,7 @@ export const company: Company = {
     'Aztech builds websites, mobile applications, business management systems, automation and AI-powered solutions for businesses, offices and organizations.',
   email: 'aliyyahya99@gmail.com',
   phone: '+255 772 503 379',
-  location: 'Tanzania, serving clients locally and across Africa',
+  location: 'Chukwani, Zanzibar',
   socials: [
     { label: 'GitHub', href: 'https://github.com/zda23b024' },
   ],
@@ -57,7 +57,8 @@ export const navigation = [
   { label: 'Solutions', href: '/solutions' },
   { label: 'Projects', href: '/projects' },
   { label: 'Team', href: '/team' },
-  { label: 'Research', href: '/research' },
+  { label: 'Achievement', href: '/achievements' },
+  { label: 'Certification', href: '/certification' },
   { label: 'Insights', href: '/insights' },
   { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },

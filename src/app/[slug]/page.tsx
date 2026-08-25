@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Building2, Code2, Eye, Flag, Gem, Mail, MapPin, Phone, Rocket, ServerCog, TerminalSquare } from 'lucide-react';
+import { Award, BadgeCheck, Building2, Code2, Eye, Flag, Gem, Mail, MapPin, Phone, Rocket, ServerCog, ShieldCheck, TerminalSquare } from 'lucide-react';
 import ContactForm from '@/components/aztech/ContactForm';
 import SectionHeader from '@/components/aztech/SectionHeader';
-import { BlogCard, JobCard, ProjectCard, ResearchCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
-import { company, contacts, insights, jobs, projects, research, services, team } from '@/data/company';
+import { BlogCard, JobCard, ProjectCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
+import { company, contacts, insights, jobs, projects, services, team } from '@/data/company';
 
-const pages = ['about', 'solutions', 'projects', 'team', 'research', 'insights', 'careers', 'contact'] as const;
+const pages = ['about', 'solutions', 'projects', 'team', 'achievements', 'certification', 'insights', 'careers', 'contact'] as const;
 type PageSlug = (typeof pages)[number];
 
 const pageTitles: Record<PageSlug, string> = {
@@ -14,11 +14,48 @@ const pageTitles: Record<PageSlug, string> = {
   solutions: 'Solutions',
   projects: 'Projects',
   team: 'Team',
-  research: 'Research & Innovation',
+  achievements: 'Achievement',
+  certification: 'Certification',
   insights: 'Insights',
   careers: 'Careers',
   contact: 'Contact',
 };
+
+const achievements = [
+  {
+    title: 'Founder-led technology company',
+    description: 'Aztech has been established as a real technology organization focused on websites, mobile applications, management systems, automation and AI-powered solutions.',
+    icon: Award,
+  },
+  {
+    title: 'Client-ready digital services',
+    description: 'The company has packaged practical development services for businesses, offices and organizations that need reliable digital operations.',
+    icon: Rocket,
+  },
+  {
+    title: 'Technical leadership foundation',
+    description: 'Aztech combines computer mathematics, data science, AI and software engineering through its founder and co-founder leadership.',
+    icon: ShieldCheck,
+  },
+];
+
+const certifications = [
+  {
+    title: 'Academic technology foundation',
+    description: 'Ali Yahya Ali studies Computer Mathematics at SUMAIT University and has diploma education experience from SUZA.',
+    icon: BadgeCheck,
+  },
+  {
+    title: 'Data Science and AI training',
+    description: 'Zakariya Yahya Ally studies Data Science and Artificial Intelligence at IIT Madras Zanzibar Campus.',
+    icon: BadgeCheck,
+  },
+  {
+    title: 'Professional readiness',
+    description: 'Aztech documents its skills, services and leadership credentials clearly so clients can understand the team behind the work.',
+    icon: ShieldCheck,
+  },
+];
 
 export function generateStaticParams() {
   return pages.map((slug) => ({ slug }));
@@ -171,7 +208,7 @@ function TeamPage() {
         {leadership.map((member) => <TeamCard key={member.slug} member={member} />)}
       </div>
       <div className="mt-16">
-        <SectionHeader eyebrow="Team Members" title="Engineers, researchers and builders." />
+        <SectionHeader eyebrow="Team Members" title="Engineers, technical thinkers and builders." />
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {members.map((member) => <TeamCard key={member.slug} member={member} />)}
         </div>
@@ -180,11 +217,43 @@ function TeamPage() {
   );
 }
 
-function ResearchPage() {
+function AchievementsPage() {
   return (
-    <PageShell eyebrow="Research & Innovation" title="Experiments in AI, automation and business systems." description="Aztech explores practical ideas that can become useful tools for businesses, offices and organizations.">
-      <div className="grid gap-6 lg:grid-cols-2">
-        {research.map((item) => <ResearchCard key={item.title} item={item} />)}
+    <PageShell eyebrow="Achievement" title="Milestones that show Aztech is building with purpose." description="Aztech is growing as a practical technology company with a clear service focus, strong technical leadership and real business direction.">
+      <div className="grid gap-6 lg:grid-cols-3">
+        {achievements.map((item) => {
+          const Icon = item.icon;
+          return (
+            <article key={item.title} className="brand-card brand-card-hover rounded-lg p-6">
+              <span className="grid h-11 w-11 place-items-center rounded-md bg-[#087CFF]/10 text-[#0759E6] ring-1 ring-[#09CBEF]/20">
+                <Icon size={22} aria-hidden />
+              </span>
+              <h2 className="mt-5 text-xl font-bold text-[#071B46]">{item.title}</h2>
+              <p className="mt-3 leading-7 text-[#64748B]">{item.description}</p>
+            </article>
+          );
+        })}
+      </div>
+    </PageShell>
+  );
+}
+
+function CertificationPage() {
+  return (
+    <PageShell eyebrow="Certification" title="Education and credentials behind the Aztech team." description="Aztech presents the academic and technical background of its leadership clearly, so clients know who is building their systems.">
+      <div className="grid gap-6 lg:grid-cols-3">
+        {certifications.map((item) => {
+          const Icon = item.icon;
+          return (
+            <article key={item.title} className="brand-card brand-card-hover rounded-lg p-6">
+              <span className="grid h-11 w-11 place-items-center rounded-md bg-[#087CFF]/10 text-[#0759E6] ring-1 ring-[#09CBEF]/20">
+                <Icon size={22} aria-hidden />
+              </span>
+              <h2 className="mt-5 text-xl font-bold text-[#071B46]">{item.title}</h2>
+              <p className="mt-3 leading-7 text-[#64748B]">{item.description}</p>
+            </article>
+          );
+        })}
       </div>
     </PageShell>
   );
@@ -212,7 +281,7 @@ function CareersPage() {
           <div className="mt-6 grid gap-3 text-sm font-semibold text-[#071B46]/75">
             <span>Open Positions: shared when available</span>
             <span>Internships: interest open</span>
-            <span>Collaborations: research and product partnerships</span>
+            <span>Collaborations: product and technology partnerships</span>
           </div>
         </div>
         <div className="grid gap-5">
@@ -275,8 +344,10 @@ export default async function CorporatePage({ params }: { params: Promise<{ slug
       return <ProjectsPage />;
     case 'team':
       return <TeamPage />;
-    case 'research':
-      return <ResearchPage />;
+    case 'achievements':
+      return <AchievementsPage />;
+    case 'certification':
+      return <CertificationPage />;
     case 'insights':
       return <InsightsPage />;
     case 'careers':
