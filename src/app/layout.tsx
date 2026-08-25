@@ -25,18 +25,28 @@ export const metadata: Metadata = {
   creator: 'Aztech',
   publisher: 'Aztech',
   icons: {
-    icon: '/favicon.svg',
+    icon: '/brand/aztech-mark.png',
+    apple: '/brand/aztech-mark.png',
   },
   openGraph: {
     type: 'website',
     title: 'Aztech | Technology and Innovation',
     description: company.description,
     siteName: 'Aztech',
+    images: [
+      {
+        url: '/brand/aztech-logo.png',
+        width: 2172,
+        height: 724,
+        alt: 'Aztech logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aztech | Technology and Innovation',
     description: company.description,
+    images: ['/brand/aztech-logo.png'],
   },
 };
 
