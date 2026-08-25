@@ -4,18 +4,18 @@
 
 :root,
 .light {
-  --background: #e4edf2;
-  --foreground: #0f172a;
-  --primary: #10243d;
-  --primary-light: #1e3a5f;
-  --primary-dark: #020617;
-  --accent: #22d3ee;
-  --accent-light: #67e8f9;
-  --accent-dark: #0891b2;
-  --neutral-50: #eef3f6;
-  --neutral-100: #dfe8ee;
-  --neutral-200: #e2e8f0;
-  --neutral-300: #cbd5e1;
+  --background: #f7faff;
+  --foreground: #071b46;
+  --primary: #071b46;
+  --primary-light: #0759e6;
+  --primary-dark: #04132f;
+  --accent: #087cff;
+  --accent-light: #09cbef;
+  --accent-dark: #0759e6;
+  --neutral-50: #f7faff;
+  --neutral-100: #eef5ff;
+  --neutral-200: #dce7f5;
+  --neutral-300: #c8d8ee;
   --neutral-400: #94a3b8;
   --neutral-500: #64748b;
   --neutral-600: #475569;
@@ -25,24 +25,24 @@
 }
 
 .dark {
-  --background: #020617;
-  --foreground: #f8fafc;
-  --primary: #f8fafc;
-  --primary-light: #e2e8f0;
-  --primary-dark: #cbd5e1;
-  --accent: #22d3ee;
-  --accent-light: #67e8f9;
-  --accent-dark: #0891b2;
-  --neutral-50: #020617;
-  --neutral-100: #0f172a;
-  --neutral-200: #1e293b;
-  --neutral-300: #334155;
-  --neutral-400: #64748b;
+  --background: #04132f;
+  --foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-light: #09cbef;
+  --primary-dark: #071b46;
+  --accent: #087cff;
+  --accent-light: #09cbef;
+  --accent-dark: #0759e6;
+  --neutral-50: #04132f;
+  --neutral-100: #071b46;
+  --neutral-200: #0759e6;
+  --neutral-300: #087cff;
+  --neutral-400: #09cbef;
   --neutral-500: #94a3b8;
   --neutral-600: #cbd5e1;
-  --neutral-700: #e2e8f0;
-  --neutral-800: #f1f5f9;
-  --neutral-900: #f8fafc;
+  --neutral-700: #dce7f5;
+  --neutral-800: #f7faff;
+  --neutral-900: #ffffff;
 }
 
 @theme inline {
@@ -93,7 +93,7 @@ h3 {
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.32);
+  background: rgba(8, 124, 255, 0.24);
   color: #ffffff;
 }
 
@@ -107,10 +107,29 @@ textarea {
 
 .tech-grid {
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(8, 124, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 124, 255, 0.07) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at center, black, transparent 72%);
+}
+
+.brand-gradient {
+  background-image: linear-gradient(135deg, #071b46 0%, #0759e6 54%, #09cbef 100%);
+}
+
+.brand-card {
+  border: 1px solid #dce7f5;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(7, 27, 70, 0.07);
+}
+
+.brand-card-hover {
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.brand-card-hover:hover {
+  border-color: rgba(8, 124, 255, 0.34);
+  box-shadow: 0 24px 60px rgba(7, 89, 230, 0.12);
 }
 
 .profile-link {
@@ -118,17 +137,17 @@ textarea {
   align-items: center;
   gap: 0.5rem;
   border-radius: 0.375rem;
-  border: 1px solid rgba(8, 145, 178, 0.22);
+  border: 1px solid #dce7f5;
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #071b46;
   transition: background-color 180ms ease, color 180ms ease;
 }
 
 .profile-link:hover {
-  background: rgba(34, 211, 238, 0.12);
-  color: #075985;
+  background: rgba(8, 124, 255, 0.08);
+  color: #0759e6;
 }
 
 @media (prefers-reduced-motion: no-preference) {

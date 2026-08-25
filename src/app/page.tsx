@@ -9,51 +9,52 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-[#dfeaf0]">
+      <section className="relative isolate overflow-hidden bg-[#F7FAFF]">
         <div className="absolute inset-0 tech-grid opacity-45" />
-        <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_25%_20%,rgba(8,145,178,0.22),transparent_34%),radial-gradient(circle_at_75%_10%,rgba(15,23,42,0.12),transparent_30%)]" />
+        <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_25%_18%,rgba(8,124,255,0.14),transparent_35%),radial-gradient(circle_at_76%_12%,rgba(9,203,239,0.12),transparent_30%)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.18fr_0.82fr] lg:px-8">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white/80 px-3 py-1.5 text-sm font-semibold text-slate-800 shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-md border border-[#DCE7F5] bg-white/88 px-3 py-1.5 text-sm font-semibold text-[#0759E6] shadow-sm">
               <Sparkles size={16} aria-hidden /> Software development and AI engineering
             </div>
-            <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-normal text-slate-950 sm:text-5xl">
+            <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-normal text-[#071B46] sm:text-5xl">
               We Design, Build, and Ship Modern Digital Products.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#475569]">
               Aztech builds business websites, mobile applications, management systems, booking platforms, inventory tools, CRM systems, automated reports and AI-powered solutions.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/solutions" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0f8fb3] px-5 py-3 font-bold text-white transition hover:bg-[#0b7898] focus:outline-none focus:ring-2 focus:ring-cyan-500">
+              <Link href="/solutions" className="brand-gradient inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-bold text-white shadow-[0_16px_34px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
                 Explore Our Solutions <ArrowRight size={18} aria-hidden />
               </Link>
-              <Link href="/projects" className="inline-flex items-center justify-center rounded-md border border-slate-400 bg-white px-5 py-3 font-bold text-slate-900 transition hover:border-cyan-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+              <Link href="/projects" className="inline-flex items-center justify-center rounded-md border border-[#087CFF] bg-white px-5 py-3 font-bold text-[#0759E6] transition hover:border-[#071B46] hover:bg-[#F7FAFF] hover:text-[#071B46] focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
                 View Our Projects
               </Link>
             </div>
             <dl className="mt-10 grid gap-3 sm:grid-cols-3">
               {capabilityStats.map((item) => (
-                <div key={item.label} className="rounded-lg border border-slate-700 bg-[#162334] p-4 shadow-sm">
-                  <dt className="text-xs font-bold uppercase tracking-widest text-cyan-300">{item.label}</dt>
-                  <dd className="mt-2 text-sm font-semibold text-slate-100">{item.value}</dd>
+                <div key={item.label} className="brand-card rounded-lg p-4">
+                  <dt className="text-xs font-bold uppercase tracking-widest text-[#0759E6]">{item.label}</dt>
+                  <dd className="mt-2 text-sm font-semibold text-[#071B46]">{item.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
 
           <div className="relative mx-auto min-h-[340px] w-full max-w-[520px]">
-            <div className="absolute inset-0 rounded-2xl border border-slate-700 bg-[#101b2a] shadow-2xl" />
-            <div className="absolute inset-5 rounded-xl border border-slate-600 bg-[#142235]" />
-            <div className="absolute left-1/2 top-1/2 grid h-28 w-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-cyan-400/40 bg-cyan-400/10 text-cyan-300 shadow-[0_0_54px_rgba(34,211,238,0.22)]">
+            <div className="absolute inset-0 rounded-2xl border border-[#0759E6]/25 bg-[#04132F] shadow-[0_28px_70px_rgba(7,27,70,0.18)]" />
+            <div className="absolute inset-5 rounded-xl border border-[#087CFF]/22 bg-[#071B46]" />
+            <div className="absolute inset-5 rounded-xl bg-[radial-gradient(circle_at_50%_50%,rgba(9,203,239,0.16),transparent_34%),radial-gradient(circle_at_18%_20%,rgba(8,124,255,0.16),transparent_26%)]" />
+            <div className="absolute left-1/2 top-1/2 grid h-28 w-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-[#09CBEF]/45 bg-[#09CBEF]/10 text-[#09CBEF] shadow-[0_0_54px_rgba(9,203,239,0.22)]">
               <Cpu size={44} aria-hidden />
             </div>
             {technologyStack.map((item, index) => {
               const Icon = item.icon;
               const positions = ['left-8 top-10', 'right-8 top-16', 'bottom-12 left-10', 'bottom-8 right-10'];
               return (
-                <div key={item.label} className={`absolute ${positions[index]} rounded-lg border border-slate-600 bg-[#1b2d42] p-4 shadow-xl`}>
-                  <Icon className="text-cyan-300" size={22} aria-hidden />
-                  <p className="mt-2 text-sm font-bold text-slate-100">{item.label}</p>
+                <div key={item.label} className={`absolute ${positions[index]} rounded-lg border border-[#087CFF]/28 bg-white/9 p-4 shadow-xl backdrop-blur`}>
+                  <Icon className="text-[#09CBEF]" size={22} aria-hidden />
+                  <p className="mt-2 text-sm font-bold text-white">{item.label}</p>
                 </div>
               );
             })}
@@ -61,7 +62,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#eef3f6] px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-20 text-[#071B46] sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             eyebrow="Development services"
@@ -74,7 +75,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#dfe8ee] px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-[#EEF5FF] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Projects" title="Systems Aztech builds for real businesses." description="Aztech delivers practical systems for businesses, offices and organizations that need reliable digital operations." />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -83,7 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#eef3f6] px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-[#F7FAFF] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader eyebrow="Team" title="Founder-led, collaborative and built around engineering craft." description="Aztech is led by Ali Yahya Ali and Zakariya Yahya Ally, brothers building practical technology for businesses and organizations." />
           <div className="grid gap-5">
@@ -92,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#dfe8ee] px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
           <div>
             <SectionHeader eyebrow="Research & Innovation" title="Experiments that can become practical products." />
@@ -109,13 +110,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#eef3f6] px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-lg border border-slate-700 bg-[#142235] p-8 shadow-lg lg:flex-row lg:items-center">
+      <section className="bg-[#F7FAFF] px-4 py-20 text-[#071B46] sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-lg border border-[#0759E6]/25 bg-[#04132F] p-8 shadow-[0_24px_60px_rgba(7,27,70,0.16)] lg:flex-row lg:items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-cyan-300">Work with us</p>
+            <p className="text-sm font-bold uppercase tracking-widest text-[#09CBEF]">Work with us</p>
             <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">Ready to turn an idea into a serious digital product?</h2>
           </div>
-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-5 py-3 font-bold text-slate-950 transition hover:bg-cyan-300">
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-bold text-[#0759E6] transition hover:bg-[#09CBEF] hover:text-[#04132F]">
             Work With Us <ArrowRight size={18} aria-hidden />
           </Link>
         </div>

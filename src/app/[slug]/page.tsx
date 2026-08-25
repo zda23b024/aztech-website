@@ -47,14 +47,14 @@ function PageShell({
 }) {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#dfe8ee] px-4 py-10 text-slate-950 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#F7FAFF] px-4 py-10 text-[#071B46] sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="relative overflow-hidden rounded-2xl border border-slate-700 bg-[#101b2a] p-6 shadow-xl sm:p-8 lg:p-10">
+          <div className="relative overflow-hidden rounded-2xl border border-[#0759E6]/25 bg-[#04132F] p-6 shadow-[0_24px_60px_rgba(7,27,70,0.16)] sm:p-8 lg:p-10">
             <div className="absolute inset-0 tech-grid opacity-20" />
-            <div className="absolute right-0 top-0 h-56 w-56 bg-cyan-400/15 blur-3xl" />
+            <div className="absolute right-0 top-0 h-56 w-56 bg-[#09CBEF]/15 blur-3xl" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
-                <p className="inline-flex rounded-md border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-300">
+                <p className="inline-flex rounded-md border border-[#09CBEF]/30 bg-[#09CBEF]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#09CBEF]">
                   {eyebrow}
                 </p>
                 <h1 className="mt-5 max-w-3xl text-3xl font-bold leading-tight tracking-normal text-white sm:text-4xl">
@@ -73,8 +73,8 @@ function PageShell({
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.label} className="flex items-center gap-3 rounded-lg border border-slate-600 bg-white/8 p-4">
-                      <span className="grid h-10 w-10 place-items-center rounded-md bg-cyan-400/10 text-cyan-300">
+                    <div key={item.label} className="flex items-center gap-3 rounded-lg border border-[#087CFF]/25 bg-white/8 p-4">
+                      <span className="grid h-10 w-10 place-items-center rounded-md bg-[#09CBEF]/10 text-[#09CBEF]">
                         <Icon size={20} aria-hidden />
                       </span>
                       <span className="text-sm font-bold text-slate-100">{item.label}</span>
@@ -86,7 +86,7 @@ function PageShell({
           </div>
         </div>
       </section>
-      <div className="bg-[#eef3f6] px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
+      <div className="bg-[#F7FAFF] px-4 py-20 text-[#071B46] sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">{children}</div>
       </div>
     </>
@@ -128,10 +128,10 @@ function AboutPage() {
         {blocks.map((block) => {
           const Icon = block.icon;
           return (
-            <article key={block.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
-              <Icon className="text-cyan-600 dark:text-cyan-300" size={28} aria-hidden />
-              <h2 className="mt-5 text-xl font-bold">{block.title}</h2>
-              <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">{block.text}</p>
+            <article key={block.title} className="brand-card rounded-lg p-6">
+              <Icon className="text-[#0759E6]" size={28} aria-hidden />
+              <h2 className="mt-5 text-xl font-bold text-[#071B46]">{block.title}</h2>
+              <p className="mt-3 leading-7 text-[#64748B]">{block.text}</p>
             </article>
           );
         })}
@@ -204,12 +204,12 @@ function CareersPage() {
   return (
     <PageShell eyebrow="Careers" title="Build practical technology with Aztech." description="Aztech welcomes internship interest, collaborations and partnerships from people who want to build useful software, AI, data and automation systems.">
       <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 p-6">
-          <h2 className="text-xl font-bold">Why Aztech</h2>
-          <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">
+        <div className="brand-card rounded-lg p-6">
+          <h2 className="text-xl font-bold text-[#071B46]">Why Aztech</h2>
+          <p className="mt-4 leading-7 text-[#64748B]">
             Work on practical technology with a young, ambitious and technical team focused on useful websites, systems, AI, data and automation.
           </p>
-          <div className="mt-6 grid gap-3 text-sm font-semibold text-slate-600 dark:text-slate-300">
+          <div className="mt-6 grid gap-3 text-sm font-semibold text-[#071B46]/75">
             <span>Open Positions: shared when available</span>
             <span>Internships: interest open</span>
             <span>Collaborations: research and product partnerships</span>
@@ -227,17 +227,17 @@ function ContactPage() {
   return (
     <PageShell eyebrow="Contact" title="Have a business, office or system idea? Contact Aztech." description="Tell us what you need. Aztech can help with websites, mobile applications, management systems, booking, inventory, CRM, automated reports and AI-powered solutions.">
       <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="rounded-lg border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.04]">
-          <h2 className="text-xl font-bold">Contact details</h2>
-          <div className="mt-6 grid gap-4 text-sm text-slate-600 dark:text-slate-300">
+        <div className="brand-card rounded-lg p-6">
+          <h2 className="text-xl font-bold text-[#071B46]">Contact details</h2>
+          <div className="mt-6 grid gap-4 text-sm text-[#64748B]">
             {contacts.map((contact) => (
-              <div key={contact.email} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-                <p className="font-bold text-slate-950">{contact.name}</p>
-                <p className="mt-1 text-xs font-semibold text-cyan-700">{contact.role}</p>
-                <a className="mt-3 flex items-center gap-3 hover:text-cyan-700" href={`mailto:${contact.email}`}>
+              <div key={contact.email} className="rounded-lg border border-[#DCE7F5] bg-[#F7FAFF] p-4">
+                <p className="font-bold text-[#071B46]">{contact.name}</p>
+                <p className="mt-1 text-xs font-semibold text-[#0759E6]">{contact.role}</p>
+                <a className="mt-3 flex items-center gap-3 transition hover:text-[#087CFF]" href={`mailto:${contact.email}`}>
                   <Mail size={18} aria-hidden /> {contact.email}
                 </a>
-                <a className="mt-2 flex items-center gap-3 hover:text-cyan-700" href={`tel:${contact.phone.replaceAll(' ', '')}`}>
+                <a className="mt-2 flex items-center gap-3 transition hover:text-[#087CFF]" href={`tel:${contact.phone.replaceAll(' ', '')}`}>
                   <Phone size={18} aria-hidden /> {contact.phone}
                 </a>
               </div>
@@ -247,10 +247,10 @@ function ContactPage() {
             </span>
           </div>
           <div className="mt-8">
-            <p className="text-sm font-bold uppercase tracking-widest text-cyan-700 dark:text-cyan-300">Social</p>
+            <p className="text-sm font-bold uppercase tracking-widest text-[#0759E6]">Social</p>
             <div className="mt-3 flex flex-wrap gap-3">
               {company.socials.map((social) => (
-                <a key={social.label} href={social.href} className="rounded-md border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-950 dark:border-white/10 dark:text-slate-300 dark:hover:text-white">
+                <a key={social.label} href={social.href} className="rounded-md border border-[#DCE7F5] px-3 py-2 text-sm font-semibold text-[#0759E6] transition hover:border-[#087CFF] hover:bg-[#F7FAFF] hover:text-[#071B46]">
                   {social.label}
                 </a>
               ))}

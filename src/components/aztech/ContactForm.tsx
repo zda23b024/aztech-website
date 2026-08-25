@@ -36,36 +36,36 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
+    <form onSubmit={handleSubmit} className="brand-card grid gap-4 rounded-lg p-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+        <label className="grid gap-2 text-sm font-semibold text-[#071B46]">
           Name
           <input
             required
             value={form.name}
             onChange={(event) => updateField('name', event.target.value)}
-            className="rounded-md border border-slate-200 bg-white px-3 py-3 text-slate-950 outline-none focus:ring-2 focus:ring-cyan-500 dark:border-white/10 dark:bg-slate-950 dark:text-white"
+            className="rounded-md border border-[#DCE7F5] bg-white px-3 py-3 text-[#071B46] outline-none transition focus:border-[#087CFF] focus:ring-2 focus:ring-[#087CFF]/25"
             placeholder="Your name"
           />
         </label>
-        <label className="grid gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+        <label className="grid gap-2 text-sm font-semibold text-[#071B46]">
           Email
           <input
             required
             type="email"
             value={form.email}
             onChange={(event) => updateField('email', event.target.value)}
-            className="rounded-md border border-slate-200 bg-white px-3 py-3 text-slate-950 outline-none focus:ring-2 focus:ring-cyan-500 dark:border-white/10 dark:bg-slate-950 dark:text-white"
+            className="rounded-md border border-[#DCE7F5] bg-white px-3 py-3 text-[#071B46] outline-none transition focus:border-[#087CFF] focus:ring-2 focus:ring-[#087CFF]/25"
             placeholder="Your email address"
           />
         </label>
       </div>
-      <label className="grid gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+      <label className="grid gap-2 text-sm font-semibold text-[#071B46]">
         Topic
         <select
           value={form.topic}
           onChange={(event) => updateField('topic', event.target.value)}
-          className="rounded-md border border-slate-200 bg-white px-3 py-3 text-slate-950 outline-none focus:ring-2 focus:ring-cyan-500 dark:border-white/10 dark:bg-slate-950 dark:text-white"
+          className="rounded-md border border-[#DCE7F5] bg-white px-3 py-3 text-[#071B46] outline-none transition focus:border-[#087CFF] focus:ring-2 focus:ring-[#087CFF]/25"
         >
           <option>General inquiry</option>
           <option>Partnerships</option>
@@ -74,20 +74,20 @@ export default function ContactForm() {
           <option>Careers</option>
         </select>
       </label>
-      <label className="grid gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+      <label className="grid gap-2 text-sm font-semibold text-[#071B46]">
         Message
         <textarea
           required
           value={form.message}
           onChange={(event) => updateField('message', event.target.value)}
-          className="min-h-36 rounded-md border border-slate-200 bg-white px-3 py-3 text-slate-950 outline-none focus:ring-2 focus:ring-cyan-500 dark:border-white/10 dark:bg-slate-950 dark:text-white"
+          className="min-h-36 rounded-md border border-[#DCE7F5] bg-white px-3 py-3 text-[#071B46] outline-none transition focus:border-[#087CFF] focus:ring-2 focus:ring-[#087CFF]/25"
           placeholder="Tell us what you want to build."
         />
       </label>
-      <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-5 py-3 font-bold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+      <button type="submit" className="brand-gradient inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-bold text-white shadow-[0_14px_30px_rgba(8,124,255,0.18)] transition hover:bg-[#071B46] hover:bg-none focus:outline-none focus:ring-2 focus:ring-[#087CFF]">
         Send Message <Send size={18} aria-hidden />
       </button>
-      <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+      <p className="text-xs leading-5 text-[#64748B]">
         This opens your email app with both Aztech contacts already added.
       </p>
     </form>

@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen bg-[#e4edf2] font-sans text-slate-900 antialiased">
+      <body className="min-h-screen bg-[#F7FAFF] font-sans text-[#071B46] antialiased">
         <Navbar />
         <main className="pt-16 lg:pt-20">{children}</main>
         <Footer />

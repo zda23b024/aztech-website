@@ -39,10 +39,10 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#eef9fb] px-4 py-16 text-slate-950 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#F7FAFF] px-4 py-16 text-[#071B46] sm:px-6 lg:px-8">
         <div className="absolute inset-0 tech-grid opacity-35" />
         <div className="relative mx-auto max-w-7xl">
-          <Link href="/team" className="inline-flex items-center gap-2 text-sm font-bold text-cyan-700 hover:text-cyan-900">
+          <Link href="/team" className="inline-flex items-center gap-2 text-sm font-bold text-[#0759E6] transition hover:text-[#071B46]">
             <ArrowLeft size={16} aria-hidden /> Back to team
           </Link>
           <div className="mt-10 grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
@@ -53,20 +53,20 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
                 width={520}
                 height={520}
                 priority
-                className="aspect-square max-w-sm rounded-2xl border border-cyan-100 bg-white object-cover object-center shadow-sm"
+                className="aspect-square max-w-sm rounded-2xl border border-[#DCE7F5] bg-white object-cover object-center shadow-[0_18px_44px_rgba(7,27,70,0.08)]"
               />
             ) : (
-              <div className="grid aspect-square max-w-sm place-items-center rounded-2xl border border-cyan-100 bg-white text-5xl font-bold text-cyan-700 shadow-sm">
+              <div className="grid aspect-square max-w-sm place-items-center rounded-2xl border border-[#DCE7F5] bg-white text-5xl font-bold text-[#0759E6] shadow-[0_18px_44px_rgba(7,27,70,0.08)]">
                 {profile.name.split(' ').map((part) => part[0]).join('').slice(0, 2)}
               </div>
             )}
             <div>
-              <p className="text-sm font-bold uppercase tracking-widest text-cyan-700">{profile.role}</p>
-              <h1 className="mt-4 text-3xl font-bold tracking-normal sm:text-4xl">{profile.name}</h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{profile.biography}</p>
+              <p className="text-sm font-bold uppercase tracking-widest text-[#0759E6]">{profile.role}</p>
+              <h1 className="mt-4 text-3xl font-bold tracking-normal text-[#071B46] sm:text-4xl">{profile.name}</h1>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[#64748B]">{profile.biography}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {profile.skills.map((skill) => (
-                  <span key={skill} className="rounded-md border border-cyan-100 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700">
+                  <span key={skill} className="rounded-md border border-[#DCE7F5] bg-white px-3 py-1.5 text-sm font-semibold text-[#071B46]/75">
                     {skill}
                   </span>
                 ))}
@@ -81,12 +81,12 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
         </div>
       </section>
 
-      <section className="bg-white px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-20 text-[#071B46] sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2">
           {sections.map((section) => (
-            <article key={section.title} className="rounded-lg border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.04]">
-              <h2 className="text-xl font-bold">{section.title}</h2>
-              <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+            <article key={section.title} className="brand-card rounded-lg p-6">
+              <h2 className="text-xl font-bold text-[#071B46]">{section.title}</h2>
+              <ul className="mt-4 grid gap-3 text-sm leading-6 text-[#64748B]">
                 {section.items?.map((item) => <li key={item}>{item}</li>)}
               </ul>
             </article>
