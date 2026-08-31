@@ -6,7 +6,7 @@ import SectionHeader from '@/components/aztech/SectionHeader';
 import { BlogCard, JobCard, ProjectCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
 import { company, contacts, insights, jobs, projects, services, team } from '@/data/company';
 
-const pages = ['about', 'solutions', 'projects', 'team', 'achievements', 'certification', 'insights', 'careers', 'contact'] as const;
+const pages = ['about', 'solutions', 'projects', 'team', 'achievements', 'insights', 'careers', 'contact'] as const;
 type PageSlug = (typeof pages)[number];
 
 const pageTitles: Record<PageSlug, string> = {
@@ -14,8 +14,7 @@ const pageTitles: Record<PageSlug, string> = {
   solutions: 'Solutions',
   projects: 'Projects',
   team: 'Team',
-  achievements: 'Achievement',
-  certification: 'Certification',
+  achievements: 'Achievement & Certification',
   insights: 'Insights',
   careers: 'Careers',
   contact: 'Contact',
@@ -219,8 +218,9 @@ function TeamPage() {
 
 function AchievementsPage() {
   return (
-    <PageShell eyebrow="Achievement" title="Milestones that show Aztech is building with purpose." description="Aztech is growing as a practical technology company with a clear service focus, strong technical leadership and real business direction.">
-      <div className="grid gap-6 lg:grid-cols-3">
+    <PageShell eyebrow="Achievement & Certification" title="Milestones and credentials behind Aztech." description="Aztech is growing as a practical technology company with clear service focus, strong technical leadership and an academic foundation in computer mathematics, data science and AI.">
+      <SectionHeader eyebrow="Achievement" title="Milestones that show Aztech is building with purpose." />
+      <div className="mt-8 grid gap-6 lg:grid-cols-3">
         {achievements.map((item) => {
           const Icon = item.icon;
           return (
@@ -234,14 +234,10 @@ function AchievementsPage() {
           );
         })}
       </div>
-    </PageShell>
-  );
-}
-
-function CertificationPage() {
-  return (
-    <PageShell eyebrow="Certification" title="Education and credentials behind the Aztech team." description="Aztech presents the academic and technical background of its leadership clearly, so clients know who is building their systems.">
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="mt-16">
+        <SectionHeader eyebrow="Certification" title="Education and credentials behind the Aztech team." />
+      </div>
+      <div className="mt-8 grid gap-6 lg:grid-cols-3">
         {certifications.map((item) => {
           const Icon = item.icon;
           return (
@@ -346,8 +342,6 @@ export default async function CorporatePage({ params }: { params: Promise<{ slug
       return <TeamPage />;
     case 'achievements':
       return <AchievementsPage />;
-    case 'certification':
-      return <CertificationPage />;
     case 'insights':
       return <InsightsPage />;
     case 'careers':

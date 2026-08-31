@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Award, BadgeCheck, Sparkles } from 'lucide-react';
 import SectionHeader from '@/components/aztech/SectionHeader';
-import { BlogCard, ProjectCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
-import { insights, projects, services, team } from '@/data/company';
+import { ProjectCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
+import { projects, services, team } from '@/data/company';
 
 export default function Home() {
   const leadership = team.filter((member) => member.group === 'Leadership').slice(0, 2);
@@ -79,29 +79,23 @@ export default function Home() {
       </section>
 
       <section className="bg-[#EEF5FF] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-          <div>
-            <SectionHeader eyebrow="Achievement" title="A growing technology company with clear direction." />
-            <Link href="/achievements" className="brand-card brand-card-hover mt-8 block rounded-lg p-6">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader eyebrow="Achievement & Certification" title="A growing technology company with skilled leadership." />
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            <Link href="/achievements" className="brand-card brand-card-hover block rounded-lg p-6">
               <Award className="text-[#0759E6]" size={28} aria-hidden />
               <h3 className="mt-4 text-lg font-bold text-[#071B46]">Founder-led and client-ready</h3>
               <p className="mt-3 text-sm leading-6 text-[#64748B]">
                 Aztech is building a real service company around websites, mobile apps, business systems, automation and AI-powered tools.
               </p>
             </Link>
-          </div>
-          <div>
-            <SectionHeader eyebrow="Certification" title="Education and skills behind the work." />
-            <div className="mt-8 grid gap-5">
-              <Link href="/certification" className="brand-card brand-card-hover block rounded-lg p-6">
-                <BadgeCheck className="text-[#0759E6]" size={28} aria-hidden />
-                <h3 className="mt-4 text-lg font-bold text-[#071B46]">Computer mathematics, data science and AI</h3>
-                <p className="mt-3 text-sm leading-6 text-[#64748B]">
-                  The Aztech team combines academic technology training with practical software and business-system development.
-                </p>
-              </Link>
-              {insights.slice(0, 1).map((post) => <BlogCard key={post.title} post={post} />)}
-            </div>
+            <Link href="/achievements" className="brand-card brand-card-hover block rounded-lg p-6">
+              <BadgeCheck className="text-[#0759E6]" size={28} aria-hidden />
+              <h3 className="mt-4 text-lg font-bold text-[#071B46]">Computer mathematics, data science and AI</h3>
+              <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                The Aztech team combines academic technology training with practical software and business-system development.
+              </p>
+            </Link>
           </div>
         </div>
       </section>

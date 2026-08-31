@@ -54,8 +54,7 @@ export const navigation = [
   { label: 'Solutions', href: '/solutions' },
   { label: 'Projects', href: '/projects' },
   { label: 'Team', href: '/team' },
-  { label: 'Achievement', href: '/achievements' },
-  { label: 'Certification', href: '/certification' },
+  { label: 'Achievement & Certification', href: '/achievements' },
 ];
 
 export const services: Service[] = [
