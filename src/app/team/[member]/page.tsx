@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowLeft, Github, Linkedin, Mail, MessageCircle, Phone } from 'lucide-react';
 import { team } from '@/data/company';
 
 export function generateStaticParams() {
@@ -36,6 +36,8 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
     { title: 'Projects', items: profile.projects },
     { title: 'Research', items: profile.research },
   ].filter((section) => section.items?.length);
+  const cleanPhone = profile.phone?.replace(/[^\d+]/g, '');
+  const whatsappPhone = profile.phone?.replace(/\D/g, '');
 
   return (
     <>
@@ -53,10 +55,10 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
                 width={520}
                 height={520}
                 priority
-                className="aspect-square max-w-sm rounded-2xl border border-[#DCE7F5] bg-white object-cover object-center shadow-[0_18px_44px_rgba(7,27,70,0.08)]"
+                className="aspect-square max-w-sm rounded-full border-4 border-white bg-white object-cover object-center shadow-[0_18px_44px_rgba(7,27,70,0.12)] ring-1 ring-[#09CBEF]/35"
               />
             ) : (
-              <div className="grid aspect-square max-w-sm place-items-center rounded-2xl border border-[#DCE7F5] bg-white text-5xl font-bold text-[#0759E6] shadow-[0_18px_44px_rgba(7,27,70,0.08)]">
+              <div className="grid aspect-square max-w-sm place-items-center rounded-full border-4 border-white bg-[#E9F8FF] text-5xl font-bold text-[#0759E6] shadow-[0_18px_44px_rgba(7,27,70,0.12)] ring-1 ring-[#09CBEF]/35">
                 {profile.name.split(' ').map((part) => part[0]).join('').slice(0, 2)}
               </div>
             )}
@@ -72,6 +74,8 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
                 ))}
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
+                {cleanPhone ? <a href={`tel:${cleanPhone}`} className="profile-link"><Phone size={17} aria-hidden /> Call</a> : null}
+                {whatsappPhone ? <a href={`https://wa.me/${whatsappPhone}`} className="profile-link"><MessageCircle size={17} aria-hidden /> WhatsApp</a> : null}
                 {profile.email ? <a href={`mailto:${profile.email}`} className="profile-link"><Mail size={17} aria-hidden /> Email</a> : null}
                 {profile.github ? <a href={profile.github} className="profile-link"><Github size={17} aria-hidden /> GitHub</a> : null}
                 {profile.linkedin ? <a href={profile.linkedin} className="profile-link"><Linkedin size={17} aria-hidden /> LinkedIn</a> : null}
