@@ -6,7 +6,8 @@ import { ProjectCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
 import { projects, services, team } from '@/data/company';
 
 export default function Home() {
-  const leadership = team.filter((member) => member.group === 'Leadership').slice(0, 2);
+  const featuredTeam = team;
+  const rollingTeam = [...featuredTeam, ...featuredTeam];
 
   return (
     <>
@@ -70,10 +71,16 @@ export default function Home() {
       </section>
 
       <section className="bg-[#F2F7FF] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Team" title="Founder-led, collaborative and built around engineering craft." description="Aztech is led by Ali Yahya Ali and Zakariya Yahya Ally, brothers building practical technology for businesses and organizations." />
-          <div className="grid gap-5">
-            {leadership.map((member) => <TeamCard key={member.slug} member={member} />)}
+          <div className="team-carousel mt-10 overflow-hidden">
+            <div className="team-carousel-track flex gap-5">
+              {rollingTeam.map((member, index) => (
+                <div key={`${member.slug}-${index}`} className="team-carousel-card shrink-0">
+                  <TeamCard member={member} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

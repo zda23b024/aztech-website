@@ -169,16 +169,20 @@ export const team: TeamMember[] = [
   {
     slug: 'abdallah-sadri-abdallah',
     name: 'Abdallah Sadri Abdallah',
-    role: 'Team Member',
+    role: 'Developer',
     group: 'Team Members',
     biography:
-      'Abdallah Sadri Abdallah is part of the Aztech team, supporting practical software work for websites, business systems and digital product delivery.',
-    skills: ['Software Development', 'Web Systems', 'Business Technology'],
+      'Abdallah Sadri Abdallah is a Developer at Aztech with a focus on data science, artificial intelligence and practical software systems for business needs.',
+    photo: '/team/abdallah-sadri-abdallah.png',
+    skills: ['Data Science', 'Artificial Intelligence', 'Software Development', 'Business Systems'],
     github: 'https://github.com/Abdallahdula',
     email: 'zda23b014@iitmz.ac.in',
     phone: '+255 679 913 946',
-    expertise: ['Software development', 'Web systems', 'Digital product support'],
-    projects: ['Aztech websites and business systems support'],
+    education: ['Data Science and Artificial Intelligence, IIT Madras Zanzibar Campus'],
+    experience: ['Aztech software development and digital product work'],
+    expertise: ['Data science', 'Artificial intelligence', 'Software engineering', 'Business systems', 'Automation workflows'],
+    projects: ['Aztech websites and business systems support', 'AI and data-driven product support'],
+    research: ['Applied AI and data systems for practical business problems'],
   },
 ];
 
