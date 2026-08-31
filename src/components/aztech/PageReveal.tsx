@@ -21,7 +21,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, scale: 1, filter: 'blur(0px)' },
     exit: { opacity: 0, scale: 1.01, y: -10, filter: 'blur(8px)' },
     curtain: {
-      className: 'origin-center bg-[linear-gradient(135deg,#071B46_0%,#0759E6_58%,#09CBEF_100%)]',
+      className: 'origin-center bg-[linear-gradient(135deg,#071B46_0%,#0759E6_58%,#0A9FC3_100%)]',
       initial: { scaleY: 1 },
       animate: { scaleY: 0 },
       exit: { scaleY: 1 },
@@ -32,7 +32,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, x: 0, filter: 'blur(0px)' },
     exit: { opacity: 0, x: 24, filter: 'blur(7px)' },
     curtain: {
-      className: 'origin-left bg-[linear-gradient(90deg,#123E73_0%,#087CFF_68%,#09CBEF_100%)]',
+      className: 'origin-left bg-[linear-gradient(90deg,#123E73_0%,#0B63C7_68%,#0A9FC3_100%)]',
       initial: { scaleX: 1 },
       animate: { scaleX: 0 },
       exit: { scaleX: 1 },
@@ -43,7 +43,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
     exit: { opacity: 0, y: -26, filter: 'blur(7px)' },
     curtain: {
-      className: 'origin-bottom bg-[linear-gradient(0deg,#071B46_0%,#0759E6_52%,#09CBEF_100%)]',
+      className: 'origin-bottom bg-[linear-gradient(0deg,#071B46_0%,#0759E6_52%,#0A9FC3_100%)]',
       initial: { scaleY: 1 },
       animate: { scaleY: 0 },
       exit: { scaleY: 1 },
@@ -54,7 +54,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' },
     exit: { opacity: 0, x: -32, scale: 0.99, filter: 'blur(7px)' },
     curtain: {
-      className: 'origin-right bg-[linear-gradient(270deg,#071B46_0%,#087CFF_62%,#09CBEF_100%)]',
+      className: 'origin-right bg-[linear-gradient(270deg,#071B46_0%,#0B63C7_62%,#0A9FC3_100%)]',
       initial: { scaleX: 1 },
       animate: { scaleX: 0 },
       exit: { scaleX: 1 },
@@ -65,7 +65,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
     exit: { opacity: 0, y: 22, scale: 0.99, filter: 'blur(8px)' },
     curtain: {
-      className: 'origin-top bg-[linear-gradient(180deg,#09CBEF_0%,#087CFF_42%,#123E73_100%)]',
+      className: 'origin-top bg-[linear-gradient(180deg,#0A9FC3_0%,#0B63C7_42%,#123E73_100%)]',
       initial: { scaleY: 1 },
       animate: { scaleY: 0 },
       exit: { scaleY: 1 },
@@ -76,7 +76,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' },
     exit: { opacity: 0, scale: 1.015, y: -16, filter: 'blur(7px)' },
     curtain: {
-      className: 'origin-center bg-[radial-gradient(circle_at_50%_50%,#09CBEF_0%,#087CFF_42%,#071B46_100%)]',
+      className: 'origin-center bg-[radial-gradient(circle_at_50%_50%,#0A9FC3_0%,#0B63C7_42%,#071B46_100%)]',
       initial: { clipPath: 'circle(150% at 50% 50%)' },
       animate: { clipPath: 'circle(0% at 50% 50%)' },
       exit: { clipPath: 'circle(150% at 50% 50%)' },
@@ -87,7 +87,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
     exit: { opacity: 0, y: -18, filter: 'blur(8px)' },
     curtain: {
-      className: 'origin-bottom bg-[linear-gradient(12deg,#071B46_0%,#123E73_48%,#09CBEF_100%)]',
+      className: 'origin-bottom bg-[linear-gradient(12deg,#071B46_0%,#123E73_48%,#0A9FC3_100%)]',
       initial: { y: '0%' },
       animate: { y: '-100%' },
       exit: { y: '0%' },
@@ -98,7 +98,7 @@ const reveals: Record<string, RevealStyle> = {
     animate: { opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' },
     exit: { opacity: 0, x: 20, scale: 0.995, filter: 'blur(7px)' },
     curtain: {
-      className: 'origin-left bg-[linear-gradient(115deg,#071B46_0%,#123E73_54%,#09CBEF_100%)]',
+      className: 'origin-left bg-[linear-gradient(115deg,#071B46_0%,#123E73_54%,#0A9FC3_100%)]',
       initial: { skewX: -8, x: '-8%', scaleX: 1.18 },
       animate: { skewX: -8, x: '112%', scaleX: 1.18 },
       exit: { skewX: -8, x: '-8%', scaleX: 1.18 },

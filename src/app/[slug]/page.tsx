@@ -87,7 +87,7 @@ function PageShell({
         <div className="mx-auto max-w-7xl">
           <div className="brand-gradient relative overflow-hidden rounded-2xl border border-[#09CBEF]/25 p-6 shadow-[0_24px_60px_rgba(7,89,230,0.14)] sm:p-8 lg:p-10">
             <div className="absolute inset-0 tech-grid opacity-20" />
-            <div className="absolute right-0 top-0 h-56 w-56 bg-[#09CBEF]/15 blur-3xl" />
+            <div className="absolute right-0 top-0 h-56 w-56 bg-[#09CBEF]/8 blur-3xl" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
                 <p className="inline-flex rounded-md border border-[#09CBEF]/30 bg-[#09CBEF]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#09CBEF]">
@@ -109,8 +109,8 @@ function PageShell({
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.label} className="flex items-center gap-3 rounded-lg border border-[#087CFF]/25 bg-white/8 p-4">
-                      <span className="grid h-10 w-10 place-items-center rounded-md bg-[#09CBEF]/10 text-[#09CBEF]">
+                    <div key={item.label} className="flex items-center gap-3 rounded-lg border border-[#09CBEF]/18 bg-[#071B46]/18 p-4">
+                      <span className="grid h-10 w-10 place-items-center rounded-md bg-[#09CBEF]/8 text-[#45DDF4]">
                         <Icon size={20} aria-hidden />
                       </span>
                       <span className="text-sm font-bold text-slate-100">{item.label}</span>
