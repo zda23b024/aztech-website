@@ -18,7 +18,7 @@ export default function Logo({ tone = 'dark' }: LogoProps) {
         width={1536}
         height={1024}
         priority={tone === 'dark'}
-        className={tone === 'light' ? 'h-auto w-[170px] sm:w-[210px]' : 'h-auto w-[92px] sm:w-[104px] lg:w-[118px]'}
+        className={tone === 'light' ? 'h-auto w-[150px] sm:w-[185px]' : 'h-auto w-[80px] sm:w-[92px] lg:w-[104px]'}
       />
     </Link>
   );
