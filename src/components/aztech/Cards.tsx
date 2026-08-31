@@ -10,12 +10,12 @@ const chip = 'rounded-md border border-[#DCE7F5] bg-[#F7FAFF] px-2.5 py-1 text-x
 export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
   return (
-    <article className={`${cardBase} group hover:-translate-y-1`}>
-      <div className="flex h-11 w-11 items-center justify-center rounded-md bg-[#087CFF]/10 text-[#0759E6] ring-1 ring-[#09CBEF]/20">
-        <Icon size={22} aria-hidden />
+    <article className={`${cardBase} group flex min-h-64 flex-col items-center justify-center text-center hover:-translate-y-1`}>
+      <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-[#09CBEF]/25 bg-[#E9F8FF] text-[#0759E6] shadow-[0_18px_38px_rgba(8,124,255,0.14)] transition group-hover:border-[#087CFF]/40 group-hover:bg-white group-hover:text-[#087CFF]">
+        <Icon size={38} strokeWidth={2.2} aria-hidden />
       </div>
       <h3 className="mt-5 text-lg font-bold text-[#071B46]">{service.title}</h3>
-      <p className={`mt-3 ${bodyText}`}>{service.description}</p>
+      <p className={`mt-3 max-w-sm ${bodyText}`}>{service.description}</p>
     </article>
   );
 }
