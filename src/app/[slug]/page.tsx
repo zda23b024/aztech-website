@@ -11,7 +11,7 @@ type PageSlug = (typeof pages)[number];
 
 const pageTitles: Record<PageSlug, string> = {
   about: 'About',
-  solutions: 'Solutions',
+  solutions: 'Our Services',
   projects: 'Projects',
   team: 'Team',
   achievements: 'Achievement & Certification',
@@ -178,7 +178,7 @@ function AboutPage() {
 
 function SolutionsPage() {
   return (
-    <PageShell eyebrow="Solutions" title="Digital solutions for businesses, offices and organizations." description="From websites and mobile apps to booking, inventory, CRM, reports and AI-powered automation, Aztech builds systems based on what your work actually needs.">
+    <PageShell eyebrow="Our Services" title="Digital services for businesses, offices and organizations." description="From websites and mobile apps to booking, inventory, CRM, reports and AI-powered automation, Aztech builds systems based on what your work actually needs.">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => <ServiceCard key={service.title} service={service} />)}
       </div>

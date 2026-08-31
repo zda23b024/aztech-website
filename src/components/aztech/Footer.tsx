@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-[#09CBEF]">Solutions</h2>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-[#09CBEF]">Our Services</h2>
             <div className="mt-4 grid gap-3">
               {services.slice(0, 5).map((service) => (
                 <Link key={service.title} href="/solutions" className="text-sm text-slate-300 transition hover:text-[#09CBEF]">

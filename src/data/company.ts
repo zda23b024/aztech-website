@@ -102,7 +102,7 @@ export const services: Service[] = [
     imageUrl: 'https://www.softimpact.net/ExtImages/News2654494-637979819599583911.png',
   },
   {
-    title: 'AI-powered Solutions',
+    title: 'AI-powered Services',
     description: 'AI-assisted tools, data workflows and smart features that help businesses work faster and make better decisions.',
     icon: BrainCircuit,
     imageUrl: 'https://www.ricoh.co.jp/magazines/workstyle/assets/img/internal-chatbot-case-studies1.webp',

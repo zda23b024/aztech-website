@@ -37,7 +37,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <Link href="/solutions" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#087CFF] px-5 py-3 font-semibold text-white shadow-[0_20px_45px_rgba(8,124,255,0.35)] transition hover:bg-[#09CBEF] hover:text-[#123E73] focus:outline-none focus:ring-2 focus:ring-[#09CBEF]">
-                  Explore Our Solutions <ArrowRight size={18} aria-hidden />
+                  Explore Our Services <ArrowRight size={18} aria-hidden />
                 </Link>
                 <Link href="/projects" className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-5 py-3 font-semibold text-white backdrop-blur transition hover:border-[#09CBEF] hover:bg-white hover:text-[#0759E6] focus:outline-none focus:ring-2 focus:ring-[#09CBEF]">
                   View Our Projects
