@@ -12,6 +12,7 @@ export interface Company {
   email: string;
   phone: string;
   location: string;
+  locationUrl: string;
   socials: SocialLink[];
 }
 
@@ -19,6 +20,7 @@ export interface Service {
   title: string;
   description: string;
   icon: LucideIcon;
+  imageUrl?: string;
 }
 
 export interface Project {
@@ -30,6 +32,8 @@ export interface Project {
   category: string;
   status: string;
   github?: string;
+  imageUrl?: string;
+  demoUrl?: string;
 }
 
 export interface TeamMember {

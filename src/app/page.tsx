@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-[#04132F]">
+      <section className="relative isolate overflow-hidden bg-[#123E73]">
         <Image
           src="/brand/aztech-hero-office.png"
           alt=""
@@ -20,7 +20,7 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,19,47,0.94)_0%,rgba(7,27,70,0.84)_45%,rgba(7,89,230,0.52)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,62,115,0.90)_0%,rgba(23,83,143,0.78)_48%,rgba(8,124,255,0.48)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_22%,rgba(9,203,239,0.28),transparent_32%),radial-gradient(circle_at_18%_75%,rgba(8,124,255,0.24),transparent_34%)]" />
         <div className="absolute inset-0 tech-grid opacity-25" />
         <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] max-w-7xl items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
@@ -36,7 +36,7 @@ export default function Home() {
                 Aztech designs and develops business websites, mobile applications, management systems, booking platforms, inventory tools, CRM workflows, automated reports and AI-powered solutions.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-                <Link href="/solutions" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#087CFF] px-5 py-3 font-semibold text-white shadow-[0_20px_45px_rgba(8,124,255,0.35)] transition hover:bg-[#09CBEF] hover:text-[#04132F] focus:outline-none focus:ring-2 focus:ring-[#09CBEF]">
+                <Link href="/solutions" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#087CFF] px-5 py-3 font-semibold text-white shadow-[0_20px_45px_rgba(8,124,255,0.35)] transition hover:bg-[#09CBEF] hover:text-[#123E73] focus:outline-none focus:ring-2 focus:ring-[#09CBEF]">
                   Explore Our Solutions <ArrowRight size={18} aria-hidden />
                 </Link>
                 <Link href="/projects" className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-5 py-3 font-semibold text-white backdrop-blur transition hover:border-[#09CBEF] hover:bg-white hover:text-[#0759E6] focus:outline-none focus:ring-2 focus:ring-[#09CBEF]">
@@ -64,7 +64,7 @@ export default function Home() {
       <section className="bg-[#E7F1FF] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Projects" title="Systems Aztech builds for real businesses." description="Aztech delivers practical systems for businesses, offices and organizations that need reliable digital operations." />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 xl:grid-cols-2">
             {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
           </div>
         </div>
@@ -108,12 +108,12 @@ export default function Home() {
       </section>
 
       <section className="bg-[#F7FAFF] px-4 py-20 text-[#071B46] sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-lg border border-[#0759E6]/25 bg-[#04132F] p-8 shadow-[0_24px_60px_rgba(7,27,70,0.16)] lg:flex-row lg:items-center">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-lg border border-[#09CBEF]/25 bg-[#123E73] p-8 shadow-[0_24px_60px_rgba(7,89,230,0.14)] lg:flex-row lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-widest text-[#09CBEF]">Work with us</p>
             <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">Ready to turn an idea into a serious digital product?</h2>
           </div>
-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-semibold text-[#0759E6] transition hover:bg-[#09CBEF] hover:text-[#04132F]">
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-semibold text-[#0759E6] transition hover:bg-[#09CBEF] hover:text-[#123E73]">
             Work With Us <ArrowRight size={18} aria-hidden />
           </Link>
         </div>

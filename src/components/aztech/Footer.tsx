@@ -4,7 +4,7 @@ import Logo from './Logo';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#0759E6]/20 bg-[#04132F] text-white">
+    <footer className="border-t border-[#09CBEF]/20 bg-[#123E73] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_2fr] lg:px-8">
         <div>
           <Logo tone="light" />
@@ -45,7 +45,14 @@ export default function Footer() {
                   <p className="mt-1 text-xs text-slate-400">{contact.phone}</p>
                 </div>
               ))}
-              <span>{company.location}</span>
+              <a
+                href={company.locationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-[#09CBEF]"
+              >
+                {company.location}
+              </a>
             </div>
           </div>
         </div>

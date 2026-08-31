@@ -85,7 +85,7 @@ function PageShell({
     <>
       <section className="relative overflow-hidden bg-[#F7FAFF] px-4 py-10 text-[#071B46] sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="relative overflow-hidden rounded-2xl border border-[#0759E6]/25 bg-[#04132F] p-6 shadow-[0_24px_60px_rgba(7,27,70,0.16)] sm:p-8 lg:p-10">
+          <div className="relative overflow-hidden rounded-2xl border border-[#09CBEF]/25 bg-[#123E73] p-6 shadow-[0_24px_60px_rgba(7,89,230,0.14)] sm:p-8 lg:p-10">
             <div className="absolute inset-0 tech-grid opacity-20" />
             <div className="absolute right-0 top-0 h-56 w-56 bg-[#09CBEF]/15 blur-3xl" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -189,7 +189,7 @@ function SolutionsPage() {
 function ProjectsPage() {
   return (
     <PageShell eyebrow="Projects" title="Systems Aztech builds for clients." description="Aztech delivers practical websites, platforms, management systems, automation and AI-powered tools for real business operations.">
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 xl:grid-cols-2">
         {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
       </div>
     </PageShell>
@@ -307,9 +307,14 @@ function ContactPage() {
                 </a>
               </div>
             ))}
-            <span className="flex items-center gap-3">
+            <a
+              href={company.locationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 transition hover:text-[#087CFF]"
+            >
               <MapPin size={18} aria-hidden /> {company.location}
-            </span>
+            </a>
           </div>
           <div className="mt-8">
             <p className="text-sm font-bold uppercase tracking-widest text-[#0759E6]">Social</p>

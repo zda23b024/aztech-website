@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, CheckCircle2, Github, Linkedin, Mail, MessageCircle, Phone } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Github, Linkedin, Mail, MessageCircle, Phone, PlayCircle } from 'lucide-react';
 import type { BlogPost, JobOpening, Project, ResearchItem, Service, TeamMember } from '@/types/company';
 
 const cardBase = 'brand-card brand-card-hover rounded-lg p-6';
@@ -20,8 +20,17 @@ export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
   return (
     <article className={`${cardBase} group flex min-h-64 flex-col items-center justify-center text-center hover:-translate-y-1`}>
-      <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-[#09CBEF]/25 bg-[#E9F8FF] text-[#0759E6] shadow-[0_18px_38px_rgba(8,124,255,0.14)] transition group-hover:border-[#087CFF]/40 group-hover:bg-white group-hover:text-[#087CFF]">
-        <Icon size={38} strokeWidth={2.2} aria-hidden />
+      <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-lg border border-[#09CBEF]/25 bg-[#E9F8FF] text-[#0759E6] shadow-[0_18px_38px_rgba(8,124,255,0.14)] transition group-hover:border-[#087CFF]/40 group-hover:bg-white group-hover:text-[#087CFF]">
+        {service.imageUrl ? (
+          <img
+            src={service.imageUrl}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <Icon size={38} strokeWidth={2.2} aria-hidden />
+        )}
       </div>
       <h3 className="mt-5 text-lg font-bold text-[#071B46]">{service.title}</h3>
       <p className={`mt-3 max-w-sm ${bodyText}`}>{service.description}</p>
@@ -31,37 +40,56 @@ export function ServiceCard({ service }: { service: Service }) {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className={`${cardBase} flex h-full min-h-[30rem] flex-col`}>
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-md bg-[#09CBEF]/10 px-3 py-1.5 text-xs font-bold text-[#0759E6]">
-          {project.category}
-        </span>
-        <span className="rounded-md border border-[#DCE7F5] bg-white px-3 py-1.5 text-xs font-bold text-[#0759E6]">
-          {project.status}
-        </span>
+    <article className="brand-card brand-card-hover flex h-full flex-col overflow-hidden rounded-lg sm:flex-row">
+      <div className="relative min-h-52 w-full shrink-0 bg-[#E9F8FF] sm:w-1/2">
+        {project.imageUrl ? (
+          <img
+            src={project.imageUrl}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,62,115,0.04),rgba(18,62,115,0.20))]" />
       </div>
-      <h3 className="mt-6 text-2xl font-bold leading-tight text-[#071B46] lg:text-[1.35rem]">
-        {project.name}
-      </h3>
-      <p className="mt-4 text-base leading-7 text-slate-600">
-        {project.description}
-      </p>
-      <div className="mt-6 grid gap-3">
-        <div className="rounded-lg border border-[#DCE7F5] bg-[#F7FAFF] p-4">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#0759E6]">Problem</p>
-          <p className="mt-2 text-sm leading-6 text-slate-600">{project.problem}</p>
-        </div>
-        <div className="rounded-lg border border-[#DCE7F5] bg-white p-4">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#0759E6]">Solution</p>
-          <p className="mt-2 text-sm leading-6 text-slate-600">{project.solution}</p>
-        </div>
-      </div>
-      <div className="mt-auto flex flex-wrap gap-2 pt-6">
-        {project.technologies.map((tech) => (
-          <span key={tech} className="rounded-md border border-[#DCE7F5] bg-white px-3 py-1.5 text-xs font-semibold text-slate-600">
-            {tech}
+      <div className="flex min-h-56 w-full flex-col p-5 sm:w-1/2">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="rounded-md bg-[#09CBEF]/10 px-2.5 py-1 text-xs font-bold text-[#0759E6]">
+            {project.category}
           </span>
-        ))}
+          <span className="rounded-md border border-[#DCE7F5] bg-white px-2.5 py-1 text-xs font-bold text-[#0759E6]">
+            {project.status}
+          </span>
+        </div>
+        <h3 className="mt-4 text-xl font-bold leading-tight text-[#071B46]">
+          {project.name}
+        </h3>
+        <p className="mt-3 text-sm leading-6 text-slate-600">
+          {project.description}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.technologies.slice(0, 3).map((tech) => (
+            <span key={tech} className="rounded-md border border-[#DCE7F5] bg-white px-2.5 py-1 text-xs font-semibold text-slate-600">
+              {tech}
+            </span>
+          ))}
+        </div>
+        <div className="mt-auto flex flex-wrap gap-2 pt-5">
+          {project.demoUrl ? (
+            <a href={project.demoUrl} className="inline-flex items-center gap-1.5 rounded-md bg-[#087CFF] px-3 py-2 text-xs font-bold text-white transition hover:bg-[#123E73]">
+              <PlayCircle size={15} aria-hidden /> Video demo
+            </a>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-[#DCE7F5] bg-white px-3 py-2 text-xs font-bold text-slate-500">
+              <PlayCircle size={15} aria-hidden /> Demo coming soon
+            </span>
+          )}
+          {project.github ? (
+            <a href={project.github} className="inline-flex items-center gap-1.5 rounded-md border border-[#DCE7F5] bg-white px-3 py-2 text-xs font-bold text-[#0759E6] transition hover:border-[#087CFF] hover:bg-[#F7FAFF]">
+              <Github size={15} aria-hidden /> Code
+            </a>
+          ) : null}
+        </div>
       </div>
     </article>
   );
