@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Award, BadgeCheck, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, Award, BadgeCheck, Sparkles } from 'lucide-react';
 import SectionHeader from '@/components/aztech/SectionHeader';
 import { BlogCard, ProjectCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
 import { capabilityStats, insights, projects, services, team } from '@/data/company';
@@ -34,14 +34,6 @@ export default function Home() {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-blue-50/86">
                 Aztech designs and develops business websites, mobile applications, management systems, booking platforms, inventory tools, CRM workflows, automated reports and AI-powered solutions.
               </p>
-              <div className="mt-7 grid gap-3 text-sm font-semibold text-blue-50 sm:grid-cols-3">
-                {['Business-ready systems', 'AI-powered workflows', 'Built from Zanzibar'].map((item) => (
-                  <span key={item} className="inline-flex items-center gap-2 rounded-md border border-white/14 bg-white/8 px-3 py-2 backdrop-blur">
-                    <CheckCircle2 className="text-[#09CBEF]" size={16} aria-hidden />
-                    {item}
-                  </span>
-                ))}
-              </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/solutions" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#087CFF] px-5 py-3 font-semibold text-white shadow-[0_20px_45px_rgba(8,124,255,0.35)] transition hover:bg-[#09CBEF] hover:text-[#04132F] focus:outline-none focus:ring-2 focus:ring-[#09CBEF]">
                   Explore Our Solutions <ArrowRight size={18} aria-hidden />
