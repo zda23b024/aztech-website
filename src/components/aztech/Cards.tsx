@@ -40,8 +40,8 @@ export function ServiceCard({ service }: { service: Service }) {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="brand-card brand-card-hover flex h-full flex-col overflow-hidden rounded-lg sm:flex-row">
-      <div className="relative min-h-52 w-full shrink-0 bg-[#E9F8FF] sm:w-1/2">
+    <article className="brand-card brand-card-hover flex h-full min-h-[25rem] flex-col overflow-hidden rounded-lg">
+      <div className="relative h-40 w-full shrink-0 bg-[#E9F8FF]">
         {project.imageUrl ? (
           <img
             src={project.imageUrl}
@@ -52,24 +52,24 @@ export function ProjectCard({ project }: { project: Project }) {
         ) : null}
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,62,115,0.04),rgba(18,62,115,0.20))]" />
       </div>
-      <div className="flex min-h-56 w-full flex-col p-5 sm:w-1/2">
+      <div className="flex flex-1 flex-col p-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-md bg-[#09CBEF]/10 px-2.5 py-1 text-xs font-bold text-[#0759E6]">
+          <span className="rounded-md bg-[#09CBEF]/10 px-2.5 py-1 text-[11px] font-bold text-[#0759E6]">
             {project.category}
           </span>
-          <span className="rounded-md border border-[#DCE7F5] bg-white px-2.5 py-1 text-xs font-bold text-[#0759E6]">
+          <span className="rounded-md border border-[#DCE7F5] bg-white px-2.5 py-1 text-[11px] font-bold text-[#0759E6]">
             {project.status}
           </span>
         </div>
-        <h3 className="mt-4 text-xl font-bold leading-tight text-[#071B46]">
+        <h3 className="mt-4 text-lg font-bold leading-tight text-[#071B46]">
           {project.name}
         </h3>
         <p className="mt-3 text-sm leading-6 text-slate-600">
           {project.description}
         </p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-1.5">
           {project.technologies.slice(0, 3).map((tech) => (
-            <span key={tech} className="rounded-md border border-[#DCE7F5] bg-white px-2.5 py-1 text-xs font-semibold text-slate-600">
+            <span key={tech} className="rounded-md border border-[#DCE7F5] bg-white px-2 py-1 text-[11px] font-semibold text-slate-600">
               {tech}
             </span>
           ))}
@@ -84,11 +84,6 @@ export function ProjectCard({ project }: { project: Project }) {
               <PlayCircle size={15} aria-hidden /> Demo coming soon
             </span>
           )}
-          {project.github ? (
-            <a href={project.github} className="inline-flex items-center gap-1.5 rounded-md border border-[#DCE7F5] bg-white px-3 py-2 text-xs font-bold text-[#0759E6] transition hover:border-[#087CFF] hover:bg-[#F7FAFF]">
-              <Github size={15} aria-hidden /> Code
-            </a>
-          ) : null}
         </div>
       </div>
     </article>

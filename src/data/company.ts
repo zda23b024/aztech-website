@@ -51,10 +51,10 @@ export const contacts = [
 
 export const navigation = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Solutions', href: '/solutions' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Services', href: '/solutions' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Team', href: '/team' },
+  { label: 'Our Team', href: '/team' },
   { label: 'Achievement & Certification', href: '/achievements' },
 ];
 

@@ -56,30 +56,43 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
-            className="border-t border-[#DCE7F5] bg-white px-4 py-4 shadow-xl lg:hidden"
+            initial={{ opacity: 0, y: -14, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+            className="border-t border-[#DCE7F5] bg-white/96 px-4 py-4 shadow-[0_24px_60px_rgba(7,89,230,0.14)] backdrop-blur-xl lg:hidden"
           >
             <div className="mx-auto grid max-w-7xl gap-1">
-              {navigation.map((item) => (
-                <Link
+              {navigation.map((item, index) => (
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-md px-3 py-3 text-base font-semibold text-[#071B46]/80 hover:bg-[#F7FAFF] hover:text-[#087CFF]"
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.045, duration: 0.2 }}
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center justify-between rounded-lg border border-transparent px-3 py-3 text-base font-semibold text-[#071B46]/80 transition hover:border-[#DCE7F5] hover:bg-[#F7FAFF] hover:text-[#087CFF]"
+                  >
+                    {item.label}
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#09CBEF]" aria-hidden />
+                  </Link>
+                </motion.div>
               ))}
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="brand-gradient mt-3 rounded-md px-4 py-3 text-center font-semibold text-white"
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navigation.length * 0.045, duration: 0.2 }}
               >
-                Work With Us
-              </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="brand-gradient mt-3 block rounded-lg px-4 py-3 text-center font-semibold text-white shadow-[0_14px_30px_rgba(8,124,255,0.18)]"
+                >
+                  Work With Us
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

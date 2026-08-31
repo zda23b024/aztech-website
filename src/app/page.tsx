@@ -64,7 +64,7 @@ export default function Home() {
       <section className="bg-[#E7F1FF] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Projects" title="Systems Aztech builds for real businesses." description="Aztech delivers practical systems for businesses, offices and organizations that need reliable digital operations." />
-          <div className="mt-10 grid gap-6 xl:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
           </div>
         </div>

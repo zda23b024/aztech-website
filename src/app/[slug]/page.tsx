@@ -189,7 +189,7 @@ function SolutionsPage() {
 function ProjectsPage() {
   return (
     <PageShell eyebrow="Projects" title="Systems Aztech builds for clients." description="Aztech delivers practical websites, platforms, management systems, automation and AI-powered tools for real business operations.">
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
       </div>
     </PageShell>
