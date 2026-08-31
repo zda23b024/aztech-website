@@ -31,7 +31,7 @@ export default function Home() {
               <h1 className="mt-6 max-w-5xl text-3xl font-bold leading-[1.08] text-white sm:text-4xl lg:whitespace-nowrap lg:text-5xl">
                 Smart Software for modern Businesses.
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-50/86">
+              <p className="mt-6 max-w-5xl text-lg leading-8 text-blue-50/86">
                 Aztech designs and develops business websites, mobile applications, management systems, booking platforms, inventory tools, CRM workflows, automated reports and AI-powered solutions.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

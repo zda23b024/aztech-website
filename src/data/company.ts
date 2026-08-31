@@ -1,12 +1,9 @@
 import {
-  Bot,
   Boxes,
   BrainCircuit,
   CalendarCheck,
   ChartNoAxesColumnIncreasing,
   ClipboardList,
-  Code2,
-  DatabaseZap,
   Globe2,
   Smartphone,
   UsersRound,
@@ -232,17 +229,4 @@ export const jobs: JobOpening[] = [
     description: 'Aztech welcomes research, academic and startup collaborations in AI, data science and practical business technology.',
     status: 'Expressions of interest',
   },
-];
-
-export const capabilityStats = [
-  { label: 'We build', value: 'Websites, apps, systems' },
-  { label: 'For', value: 'Businesses & offices' },
-  { label: 'Call / WhatsApp', value: '+255 772 503 379' },
-];
-
-export const technologyStack = [
-  { label: 'Websites', icon: Code2 },
-  { label: 'Mobile Apps', icon: Smartphone },
-  { label: 'Systems', icon: DatabaseZap },
-  { label: 'AI Tools', icon: Bot },
 ];

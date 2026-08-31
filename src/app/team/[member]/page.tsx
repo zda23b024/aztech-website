@@ -63,7 +63,7 @@ export default async function TeamProfile({ params }: { params: Promise<{ member
             <div>
               <p className="text-sm font-bold uppercase tracking-widest text-[#0759E6]">{profile.role}</p>
               <h1 className="mt-4 text-3xl font-extrabold text-[#071B46] sm:text-4xl">{profile.name}</h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-[#64748B]">{profile.biography}</p>
+              <p className="mt-6 max-w-5xl text-lg leading-8 text-[#64748B]">{profile.biography}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {profile.skills.map((skill) => (
                   <span key={skill} className="rounded-md border border-[#DCE7F5] bg-white px-3 py-1.5 text-sm font-semibold text-[#071B46]/75">

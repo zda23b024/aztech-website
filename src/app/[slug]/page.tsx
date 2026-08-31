@@ -94,10 +94,10 @@ function PageShell({
                 <p className="inline-flex rounded-md border border-[#09CBEF]/30 bg-[#09CBEF]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#09CBEF]">
                   {eyebrow}
                 </p>
-                <h1 className="mt-5 max-w-3xl text-3xl font-extrabold leading-tight text-white sm:text-4xl">
+                <h1 className="mt-5 max-w-5xl text-3xl font-extrabold leading-tight text-white sm:text-4xl">
                   {title}
                 </h1>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
+                <p className="mt-5 max-w-5xl text-base leading-7 text-slate-300">
                   {description}
                 </p>
               </div>

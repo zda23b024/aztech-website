@@ -39,7 +39,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
             <div className={embedded ? "mb-4" : "mb-8"}>
                 <h1 className={`${embedded ? "text-2xl" : "text-4xl"} font-serif font-bold text-primary mb-4`}>{config.title}</h1>
                 {config.description && (
-                    <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 max-w-2xl leading-relaxed`}>
+                    <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 w-full max-w-none leading-relaxed`}>
                         <ReactMarkdown components={markdownComponents}>
                             {config.description}
                         </ReactMarkdown>

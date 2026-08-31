@@ -6,7 +6,7 @@ interface SectionHeaderProps {
 
 export default function SectionHeader({ eyebrow, title, description }: SectionHeaderProps) {
   return (
-    <div className="max-w-3xl">
+    <div className="w-full max-w-none">
       <p className="text-sm font-bold uppercase tracking-widest text-[#0759E6]">
         {eyebrow}
       </p>
