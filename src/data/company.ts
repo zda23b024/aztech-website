@@ -56,9 +56,6 @@ export const navigation = [
   { label: 'Team', href: '/team' },
   { label: 'Achievement', href: '/achievements' },
   { label: 'Certification', href: '/certification' },
-  { label: 'Insights', href: '/insights' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 export const services: Service[] = [
