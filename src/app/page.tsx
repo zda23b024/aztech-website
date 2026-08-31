@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Award, BadgeCheck, Sparkles } from 'lucide-react';
 import SectionHeader from '@/components/aztech/SectionHeader';
 import { BlogCard, ProjectCard, ServiceCard, TeamCard } from '@/components/aztech/Cards';
-import { capabilityStats, insights, projects, services, team } from '@/data/company';
+import { insights, projects, services, team } from '@/data/company';
 
 export default function Home() {
   const leadership = team.filter((member) => member.group === 'Leadership').slice(0, 2);
@@ -22,19 +22,19 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,19,47,0.94)_0%,rgba(7,27,70,0.84)_45%,rgba(7,89,230,0.52)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_22%,rgba(9,203,239,0.28),transparent_32%),radial-gradient(circle_at_18%_75%,rgba(8,124,255,0.24),transparent_34%)]" />
         <div className="absolute inset-0 tech-grid opacity-25" />
-        <div className="relative mx-auto min-h-[calc(100vh-5rem)] max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="flex min-h-[calc(100vh-13rem)] items-center">
-            <div>
+        <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] max-w-7xl items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
+          <div className="flex w-full justify-center">
+            <div className="mx-auto flex max-w-5xl flex-col items-center">
               <div className="inline-flex items-center gap-2 rounded-md border border-[#09CBEF]/30 bg-white/10 px-3 py-1.5 text-sm font-semibold text-white shadow-sm backdrop-blur">
                 <Sparkles size={16} aria-hidden /> Technology | AI | Digital
               </div>
               <h1 className="mt-6 max-w-5xl text-3xl font-bold leading-[1.08] text-white sm:text-4xl lg:whitespace-nowrap lg:text-5xl">
                 Smart Software for modern Businesses.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-blue-50/86">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-50/86">
                 Aztech designs and develops business websites, mobile applications, management systems, booking platforms, inventory tools, CRM workflows, automated reports and AI-powered solutions.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <Link href="/solutions" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#087CFF] px-5 py-3 font-semibold text-white shadow-[0_20px_45px_rgba(8,124,255,0.35)] transition hover:bg-[#09CBEF] hover:text-[#04132F] focus:outline-none focus:ring-2 focus:ring-[#09CBEF]">
                   Explore Our Solutions <ArrowRight size={18} aria-hidden />
                 </Link>
@@ -44,15 +44,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <dl className="grid gap-3 pb-2 sm:grid-cols-3">
-            {capabilityStats.map((item) => (
-              <div key={item.label} className="rounded-lg border border-white/14 bg-white/12 p-4 shadow-[0_18px_44px_rgba(0,0,0,0.14)] backdrop-blur-md">
-                <dt className="text-xs font-bold uppercase tracking-widest text-[#09CBEF]">{item.label}</dt>
-                <dd className="mt-2 text-sm font-semibold text-white">{item.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
 
