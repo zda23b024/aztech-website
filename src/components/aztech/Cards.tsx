@@ -20,7 +20,7 @@ export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
   return (
     <article className={`${cardBase} group flex min-h-64 flex-col items-center justify-center text-center hover:-translate-y-1`}>
-      <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-lg border border-[#09CBEF]/25 bg-[#E9F8FF] text-[#0759E6] shadow-[0_18px_38px_rgba(8,124,255,0.14)] transition group-hover:border-[#087CFF]/40 group-hover:bg-white group-hover:text-[#087CFF]">
+      <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-[#09CBEF]/25 bg-[#E9F8FF] text-[#0759E6] shadow-[0_18px_38px_rgba(8,124,255,0.14)] transition group-hover:border-[#087CFF]/40 group-hover:bg-white group-hover:text-[#087CFF]">
         {service.imageUrl ? (
           <img
             src={service.imageUrl}
@@ -67,20 +67,18 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="mt-3 text-sm leading-6 text-slate-600">
           {project.description}
         </p>
-        <div className="mt-4 flex flex-wrap gap-1.5">
+        <div className="mt-auto flex min-w-0 items-center gap-1.5 overflow-x-auto pt-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {project.technologies.slice(0, 3).map((tech) => (
-            <span key={tech} className="rounded-md border border-[#DCE7F5] bg-white px-2 py-1 text-[11px] font-semibold text-slate-600">
+            <span key={tech} className="shrink-0 whitespace-nowrap rounded-md border border-[#DCE7F5] bg-white px-2 py-1 text-[11px] font-semibold text-slate-600">
               {tech}
             </span>
           ))}
-        </div>
-        <div className="mt-auto flex flex-wrap gap-2 pt-5">
           {project.demoUrl ? (
-            <a href={project.demoUrl} className="inline-flex items-center gap-1.5 rounded-md bg-[#087CFF] px-3 py-2 text-xs font-bold text-white transition hover:bg-[#123E73]">
+            <a href={project.demoUrl} className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md bg-[#087CFF] px-3 py-2 text-xs font-bold text-white transition hover:bg-[#123E73]">
               <PlayCircle size={15} aria-hidden /> Video demo
             </a>
           ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-[#DCE7F5] bg-white px-3 py-2 text-xs font-bold text-slate-500">
+            <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border border-[#DCE7F5] bg-white px-3 py-2 text-xs font-bold text-slate-500">
               <PlayCircle size={15} aria-hidden /> Demo coming soon
             </span>
           )}

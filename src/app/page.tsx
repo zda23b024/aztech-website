@@ -108,7 +108,7 @@ export default function Home() {
       </section>
 
       <section className="bg-[#F7FAFF] px-4 py-20 text-[#071B46] sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-lg border border-[#09CBEF]/25 bg-[#123E73] p-8 shadow-[0_24px_60px_rgba(7,89,230,0.14)] lg:flex-row lg:items-center">
+        <div className="brand-gradient mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-lg border border-[#09CBEF]/25 p-8 shadow-[0_24px_60px_rgba(7,89,230,0.14)] lg:flex-row lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-widest text-[#09CBEF]">Work with us</p>
             <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">Ready to turn an idea into a serious digital product?</h2>

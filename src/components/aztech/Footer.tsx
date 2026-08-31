@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 import { company, contacts, navigation, services } from '@/data/company';
 import Logo from './Logo';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#09CBEF]/20 bg-[#123E73] text-white">
+    <footer className="brand-gradient border-t border-[#09CBEF]/20 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_2fr] lg:px-8">
         <div>
           <Logo tone="light" />
@@ -49,9 +50,10 @@ export default function Footer() {
                 href={company.locationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition hover:text-[#09CBEF]"
+                className="inline-flex items-center gap-2 transition hover:text-[#09CBEF]"
               >
-                {company.location}
+                <MapPin size={16} aria-hidden />
+                <span>{company.location}</span>
               </a>
             </div>
           </div>

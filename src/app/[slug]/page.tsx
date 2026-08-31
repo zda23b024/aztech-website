@@ -85,7 +85,7 @@ function PageShell({
     <>
       <section className="relative overflow-hidden bg-[#F7FAFF] px-4 py-10 text-[#071B46] sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="relative overflow-hidden rounded-2xl border border-[#09CBEF]/25 bg-[#123E73] p-6 shadow-[0_24px_60px_rgba(7,89,230,0.14)] sm:p-8 lg:p-10">
+          <div className="brand-gradient relative overflow-hidden rounded-2xl border border-[#09CBEF]/25 p-6 shadow-[0_24px_60px_rgba(7,89,230,0.14)] sm:p-8 lg:p-10">
             <div className="absolute inset-0 tech-grid opacity-20" />
             <div className="absolute right-0 top-0 h-56 w-56 bg-[#09CBEF]/15 blur-3xl" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
